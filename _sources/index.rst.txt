@@ -1,0 +1,19 @@
+Welcome to Canvas documentation!
+================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   canvas.rst
+   canvas_ble.rst
+   canvas_uwb.rst
+   machine.rst
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

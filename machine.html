@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine &mdash; Canvas  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="UWB" href="canvas_uwb.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Canvas
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="canvas.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Machine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#machine.Pin"><code class="docutils literal notranslate"><span class="pre">Pin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.configure_event"><code class="docutils literal notranslate"><span class="pre">Pin.configure_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.high"><code class="docutils literal notranslate"><span class="pre">Pin.high()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.low"><code class="docutils literal notranslate"><span class="pre">Pin.low()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.off"><code class="docutils literal notranslate"><span class="pre">Pin.off()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.on"><code class="docutils literal notranslate"><span class="pre">Pin.on()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.reconfigure"><code class="docutils literal notranslate"><span class="pre">Pin.reconfigure()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.toggle"><code class="docutils literal notranslate"><span class="pre">Pin.toggle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.value"><code class="docutils literal notranslate"><span class="pre">Pin.value()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.ANALOG"><code class="docutils literal notranslate"><span class="pre">Pin.ANALOG</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_BOTH"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_BOTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_FALLING"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_FALLING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_NONE"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_NONE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_RISING"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_RISING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.IN"><code class="docutils literal notranslate"><span class="pre">Pin.IN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.NO_CONNECT"><code class="docutils literal notranslate"><span class="pre">Pin.NO_CONNECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.OPEN_DRAIN"><code class="docutils literal notranslate"><span class="pre">Pin.OPEN_DRAIN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.OUT"><code class="docutils literal notranslate"><span class="pre">Pin.OUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.PULL_DOWN"><code class="docutils literal notranslate"><span class="pre">Pin.PULL_DOWN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.PULL_NONE"><code class="docutils literal notranslate"><span class="pre">Pin.PULL_NONE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.PULL_UP"><code class="docutils literal notranslate"><span class="pre">Pin.PULL_UP</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Canvas</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Machine</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/machine.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="machine">
+<h1>Machine<a class="headerlink" href="#machine" title="Link to this heading"></a></h1>
+<p>The modules described in this chapter provide the interface to the
+hardware interfaces in the machine module.</p>
+<dl class="py class" id="module-machine">
+<dt class="sig sig-object py" id="machine.Pin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">Pin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port_pin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pull</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PULL_NONE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin" title="Link to this definition"></a></dt>
+<dd><p>A pin object is used to control I/O pins (also known as GPIO -
+general-purpose input/output). Pin objects are commonly associated
+with a physical pin that can drive an output voltage and read input
+voltages. The pin class has methods to set the mode of the pin (IN,
+OUT, etc) and methods to get and set the digital logic level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port_pin</strong> – The (“port”, pin#) or (gpio-dynamic label “GPIO3”)</p></li>
+<li><p><strong>mode</strong> – <a class="reference internal" href="#machine.Pin.NO_CONNECT" title="machine.Pin.NO_CONNECT"><code class="xref py py-data docutils literal notranslate"><span class="pre">NO_CONNECT</span></code></a>, <a class="reference internal" href="#machine.Pin.IN" title="machine.Pin.IN"><code class="xref py py-data docutils literal notranslate"><span class="pre">IN</span></code></a>, py:data:<cite>OUT</cite></p></li>
+<li><p><strong>pull</strong> – Optional; <a class="reference internal" href="#machine.Pin.PULL_NONE" title="machine.Pin.PULL_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_NONE</span></code></a>, <a class="reference internal" href="#machine.Pin.PULL_UP" title="machine.Pin.PULL_UP"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_UP</span></code></a>,
+<a class="reference internal" href="#machine.Pin.PULL_DOWN" title="machine.Pin.PULL_DOWN"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_DOWN</span></code></a> (default <a class="reference internal" href="#machine.Pin.PULL_NONE" title="machine.Pin.PULL_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_NONE</span></code></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.configure_event">
+<span class="sig-name descname"><span class="pre">configure_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.configure_event" title="Link to this definition"></a></dt>
+<dd><p>Configure GPIO pin event (interrupt).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> – Function that is called when event occurs</p></li>
+<li><p><strong>type</strong> – <cite>Pin.EVENT_*</cite> type</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.high">
+<span class="sig-name descname"><span class="pre">high</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.high" title="Link to this definition"></a></dt>
+<dd><p>Set a pin to ‘1’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.low">
+<span class="sig-name descname"><span class="pre">low</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.low" title="Link to this definition"></a></dt>
+<dd><p>Set a pin to ‘0’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.off">
+<span class="sig-name descname"><span class="pre">off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.off" title="Link to this definition"></a></dt>
+<dd><p>Set a pin to off (‘0’).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.on">
+<span class="sig-name descname"><span class="pre">on</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.on" title="Link to this definition"></a></dt>
+<dd><p>Set a pin to on (‘1’).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.reconfigure">
+<span class="sig-name descname"><span class="pre">reconfigure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port_pin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pull</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PULL_NONE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.reconfigure" title="Link to this definition"></a></dt>
+<dd><p>Delete and re-initialize pin (potentially with a different configuration).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port_pin</strong> – The (“port”, pin#) or (gpio-dynamic label “GPIO3”)</p></li>
+<li><p><strong>mode</strong> – <a class="reference internal" href="#machine.Pin.NO_CONNECT" title="machine.Pin.NO_CONNECT"><code class="xref py py-data docutils literal notranslate"><span class="pre">NO_CONNECT</span></code></a>, <a class="reference internal" href="#machine.Pin.IN" title="machine.Pin.IN"><code class="xref py py-data docutils literal notranslate"><span class="pre">IN</span></code></a>, py:data:<cite>OUT</cite></p></li>
+<li><p><strong>pull</strong> – Optional; <a class="reference internal" href="#machine.Pin.PULL_NONE" title="machine.Pin.PULL_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_NONE</span></code></a>, <a class="reference internal" href="#machine.Pin.PULL_UP" title="machine.Pin.PULL_UP"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_UP</span></code></a>,
+<a class="reference internal" href="#machine.Pin.PULL_DOWN" title="machine.Pin.PULL_DOWN"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_DOWN</span></code></a> (default <a class="reference internal" href="#machine.Pin.PULL_NONE" title="machine.Pin.PULL_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_NONE</span></code></a>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.toggle">
+<span class="sig-name descname"><span class="pre">toggle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.toggle" title="Link to this definition"></a></dt>
+<dd><p>Toggle a pin’s state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#machine.Pin.value" title="Link to this definition"></a></dt>
+<dd><p>Read an input pin. Negative on error.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.ANALOG">
+<span class="sig-name descname"><span class="pre">ANALOG</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.ANALOG" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Pin is configured as an analog input</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.EVENT_BOTH">
+<span class="sig-name descname"><span class="pre">EVENT_BOTH</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.EVENT_BOTH" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Event on rising or falling edge</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.EVENT_FALLING">
+<span class="sig-name descname"><span class="pre">EVENT_FALLING</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.EVENT_FALLING" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Event on falling edge (1 -&gt; 0 transition)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.EVENT_NONE">
+<span class="sig-name descname"><span class="pre">EVENT_NONE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.EVENT_NONE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>No events</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.EVENT_RISING">
+<span class="sig-name descname"><span class="pre">EVENT_RISING</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.EVENT_RISING" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Event on rising edge (0 -&gt; 1 transition)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.IN">
+<span class="sig-name descname"><span class="pre">IN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.IN" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Pin is an input</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.NO_CONNECT">
+<span class="sig-name descname"><span class="pre">NO_CONNECT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.NO_CONNECT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Pin is disconnected internally</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.OPEN_DRAIN">
+<span class="sig-name descname"><span class="pre">OPEN_DRAIN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.OPEN_DRAIN" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Pin is an output, set to high impedance</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.OUT">
+<span class="sig-name descname"><span class="pre">OUT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.OUT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Pin is an output</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.PULL_DOWN">
+<span class="sig-name descname"><span class="pre">PULL_DOWN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.PULL_DOWN" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Pin has a pull-down resistor enabled</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.PULL_NONE">
+<span class="sig-name descname"><span class="pre">PULL_NONE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.PULL_NONE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Pin has no pull-up or pull-down resistor</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.PULL_UP">
+<span class="sig-name descname"><span class="pre">PULL_UP</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.PULL_UP" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Pin has a pull-up resistor enabled</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="canvas_uwb.html" class="btn btn-neutral float-left" title="UWB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Laird Connectivity.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

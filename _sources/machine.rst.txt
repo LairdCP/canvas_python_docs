@@ -1,0 +1,9 @@
+*******
+Machine
+*******
+
+The modules described in this chapter provide the interface to the
+hardware interfaces in the machine module.
+
+.. automodule:: machine
+    :members:

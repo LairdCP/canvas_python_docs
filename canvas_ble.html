@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BLE &mdash; Canvas  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UWB" href="canvas_uwb.html" />
+    <link rel="prev" title="General" href="canvas.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Canvas
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="canvas.html">General</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BLE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.Advertiser"><code class="docutils literal notranslate"><span class="pre">Advertiser</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.add_canvas_data"><code class="docutils literal notranslate"><span class="pre">Advertiser.add_canvas_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.add_data"><code class="docutils literal notranslate"><span class="pre">Advertiser.add_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.add_ltv"><code class="docutils literal notranslate"><span class="pre">Advertiser.add_ltv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.add_smp_uuid"><code class="docutils literal notranslate"><span class="pre">Advertiser.add_smp_uuid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.add_tag_string"><code class="docutils literal notranslate"><span class="pre">Advertiser.add_tag_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.clear_buffer"><code class="docutils literal notranslate"><span class="pre">Advertiser.clear_buffer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.set_channel_mask"><code class="docutils literal notranslate"><span class="pre">Advertiser.set_channel_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.set_directed"><code class="docutils literal notranslate"><span class="pre">Advertiser.set_directed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.set_interval"><code class="docutils literal notranslate"><span class="pre">Advertiser.set_interval()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.set_phys"><code class="docutils literal notranslate"><span class="pre">Advertiser.set_phys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.set_properties"><code class="docutils literal notranslate"><span class="pre">Advertiser.set_properties()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.start"><code class="docutils literal notranslate"><span class="pre">Advertiser.start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.stop"><code class="docutils literal notranslate"><span class="pre">Advertiser.stop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.update"><code class="docutils literal notranslate"><span class="pre">Advertiser.update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Advertiser.validate_data"><code class="docutils literal notranslate"><span class="pre">Advertiser.validate_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.Connection"><code class="docutils literal notranslate"><span class="pre">Connection</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Connection.disconnect"><code class="docutils literal notranslate"><span class="pre">Connection.disconnect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Connection.get_addr"><code class="docutils literal notranslate"><span class="pre">Connection.get_addr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Connection.get_rssi"><code class="docutils literal notranslate"><span class="pre">Connection.get_rssi()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.GattClient"><code class="docutils literal notranslate"><span class="pre">GattClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.discover"><code class="docutils literal notranslate"><span class="pre">GattClient.discover()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.enable"><code class="docutils literal notranslate"><span class="pre">GattClient.enable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.get_dict"><code class="docutils literal notranslate"><span class="pre">GattClient.get_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.read"><code class="docutils literal notranslate"><span class="pre">GattClient.read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.set_callbacks"><code class="docutils literal notranslate"><span class="pre">GattClient.set_callbacks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.set_name"><code class="docutils literal notranslate"><span class="pre">GattClient.set_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.write"><code class="docutils literal notranslate"><span class="pre">GattClient.write()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_BOTH"><code class="docutils literal notranslate"><span class="pre">GattClient.CCCD_STATE_BOTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_DISABLE"><code class="docutils literal notranslate"><span class="pre">GattClient.CCCD_STATE_DISABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_INDICATE"><code class="docutils literal notranslate"><span class="pre">GattClient.CCCD_STATE_INDICATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_NOTIFY"><code class="docutils literal notranslate"><span class="pre">GattClient.CCCD_STATE_NOTIFY</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.GattServer"><code class="docutils literal notranslate"><span class="pre">GattServer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.build_from_dict"><code class="docutils literal notranslate"><span class="pre">GattServer.build_from_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.indicate"><code class="docutils literal notranslate"><span class="pre">GattServer.indicate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.notify"><code class="docutils literal notranslate"><span class="pre">GattServer.notify()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.read"><code class="docutils literal notranslate"><span class="pre">GattServer.read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.start"><code class="docutils literal notranslate"><span class="pre">GattServer.start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.stop"><code class="docutils literal notranslate"><span class="pre">GattServer.stop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.write"><code class="docutils literal notranslate"><span class="pre">GattServer.write()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.EVENT_ATTR_VALUE"><code class="docutils literal notranslate"><span class="pre">GattServer.EVENT_ATTR_VALUE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.EVENT_CCCD_BOTH"><code class="docutils literal notranslate"><span class="pre">GattServer.EVENT_CCCD_BOTH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.EVENT_CCCD_INDICATE"><code class="docutils literal notranslate"><span class="pre">GattServer.EVENT_CCCD_INDICATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.EVENT_CCCD_NONE"><code class="docutils literal notranslate"><span class="pre">GattServer.EVENT_CCCD_NONE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.EVENT_CCCD_NOTIFY"><code class="docutils literal notranslate"><span class="pre">GattServer.EVENT_CCCD_NOTIFY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.EVENT_INDICATION_OK"><code class="docutils literal notranslate"><span class="pre">GattServer.EVENT_INDICATION_OK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattServer.EVENT_INDICATION_TIMEOUT"><code class="docutils literal notranslate"><span class="pre">GattServer.EVENT_INDICATION_TIMEOUT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.Scanner"><code class="docutils literal notranslate"><span class="pre">Scanner</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.filter_add"><code class="docutils literal notranslate"><span class="pre">Scanner.filter_add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.filter_reset"><code class="docutils literal notranslate"><span class="pre">Scanner.filter_reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.set_phys"><code class="docutils literal notranslate"><span class="pre">Scanner.set_phys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.set_timing"><code class="docutils literal notranslate"><span class="pre">Scanner.set_timing()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.start"><code class="docutils literal notranslate"><span class="pre">Scanner.start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.stop"><code class="docutils literal notranslate"><span class="pre">Scanner.stop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.FILTER_ADDR"><code class="docutils literal notranslate"><span class="pre">Scanner.FILTER_ADDR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.FILTER_DATA"><code class="docutils literal notranslate"><span class="pre">Scanner.FILTER_DATA</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.FILTER_MANUF_DATA"><code class="docutils literal notranslate"><span class="pre">Scanner.FILTER_MANUF_DATA</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.FILTER_NAME"><code class="docutils literal notranslate"><span class="pre">Scanner.FILTER_NAME</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.FILTER_UUID"><code class="docutils literal notranslate"><span class="pre">Scanner.FILTER_UUID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.TYPE_CONNECTABLE"><code class="docutils literal notranslate"><span class="pre">Scanner.TYPE_CONNECTABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.TYPE_DIRECTED"><code class="docutils literal notranslate"><span class="pre">Scanner.TYPE_DIRECTED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.TYPE_EXTENDED"><code class="docutils literal notranslate"><span class="pre">Scanner.TYPE_EXTENDED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.TYPE_LEGACY"><code class="docutils literal notranslate"><span class="pre">Scanner.TYPE_LEGACY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.TYPE_SCANNABLE"><code class="docutils literal notranslate"><span class="pre">Scanner.TYPE_SCANNABLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.Scanner.TYPE_SCAN_RESPONSE"><code class="docutils literal notranslate"><span class="pre">Scanner.TYPE_SCAN_RESPONSE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.addr_to_str"><code class="docutils literal notranslate"><span class="pre">addr_to_str()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.connect"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.find_ltv"><code class="docutils literal notranslate"><span class="pre">find_ltv()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.init"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.my_addr"><code class="docutils literal notranslate"><span class="pre">my_addr()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.set_periph_callbacks"><code class="docutils literal notranslate"><span class="pre">set_periph_callbacks()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.str_to_addr"><code class="docutils literal notranslate"><span class="pre">str_to_addr()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_FLAGS"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_FLAGS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_MANU_SPECIFIC"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_MANU_SPECIFIC</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_NAME_COMPLETE"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_NAME_COMPLETE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_NAME_SHORT"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_NAME_SHORT</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_UUID128_COMPLETE"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_UUID128_COMPLETE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_UUID128_INCOMPLETE"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_UUID128_INCOMPLETE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_UUID16_COMPLETE"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_UUID16_COMPLETE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_UUID16_INCOMPLETE"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_UUID16_INCOMPLETE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_UUID32_COMPLETE"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_UUID32_COMPLETE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.AD_TYPE_UUID32_INCOMPLETE"><code class="docutils literal notranslate"><span class="pre">AD_TYPE_UUID32_INCOMPLETE</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.PHY_125K"><code class="docutils literal notranslate"><span class="pre">PHY_125K</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.PHY_1M"><code class="docutils literal notranslate"><span class="pre">PHY_1M</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.PHY_2M"><code class="docutils literal notranslate"><span class="pre">PHY_2M</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.PHY_500K"><code class="docutils literal notranslate"><span class="pre">PHY_500K</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_ble.PHY_CODED"><code class="docutils literal notranslate"><span class="pre">PHY_CODED</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine.html">Machine</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Canvas</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BLE</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/canvas_ble.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ble">
+<h1>BLE<a class="headerlink" href="#ble" title="Link to this heading"></a></h1>
+<p>The modules described in this chapter provide the interface to the
+Bluetooth Low Energy (BLE) stack in the radio module.</p>
+<dl class="py class" id="module-canvas_ble">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">Advertiser</span></span><a class="headerlink" href="#canvas_ble.Advertiser" title="Link to this definition"></a></dt>
+<dd><p>The Advertiser class provides for two buffers that can be populated
+by the application: an advertising buffer and a scan response buffer.
+The application cannot inspect or modify in-place either of these
+buffers. Instead, methods are provided to clear the buffer and to
+add data to the buffer. When advertising is started with <a class="reference internal" href="#canvas_ble.Advertiser.start" title="canvas_ble.Advertiser.start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">start()</span></code></a>
+or updated with <a class="reference internal" href="#canvas_ble.Advertiser.update" title="canvas_ble.Advertiser.update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update()</span></code></a>, the current contents of the buffer is
+copied into the BLE stack to be used. Until either <a class="reference internal" href="#canvas_ble.Advertiser.start" title="canvas_ble.Advertiser.start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">start()</span></code></a> or
+<a class="reference internal" href="#canvas_ble.Advertiser.update" title="canvas_ble.Advertiser.update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">update()</span></code></a> are called, the application can clear/update the
+buffers at will without any consequence.</p>
+<p>Data in the buffers needs to be in the BLE LTV (length, tag, value)
+format. The methods <a class="reference internal" href="#canvas_ble.Advertiser.add_ltv" title="canvas_ble.Advertiser.add_ltv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_ltv()</span></code></a> and <a class="reference internal" href="#canvas_ble.Advertiser.add_tag_string" title="canvas_ble.Advertiser.add_tag_string"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_tag_string()</span></code></a> will
+assist with this by adding the length and tag fields. Additional care
+needs to be taken with the <a class="reference internal" href="#canvas_ble.Advertiser.add_data" title="canvas_ble.Advertiser.add_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_data()</span></code></a> method to ensure that the
+data is in the proper format.</p>
+<p>Constants for some of the possible tag (sometimes also called type) values
+exist in the <a class="reference internal" href="#module-canvas_ble" title="canvas_ble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">canvas_ble</span></code></a> module. The application can also use any
+other value that is valid for the BLE LTV format. See the <cite>canvas_ble.AD_TYPE_*</cite>
+constants.</p>
+<p>The size of the advertising buffer is platform- and configuration-dependent.
+Legacy advertising (non-extended) is limited to 31 bytes in each of the
+advertising and scan response buffers. Extended advertising allows for
+considerably larger buffers, but the size is still platform-dependent.</p>
+<p>Only one instance of the Advertiser class should ever be created.
+Multiple advertising sets is not currently implemented.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.add_canvas_data">
+<span class="sig-name descname"><span class="pre">add_canvas_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scan</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.add_canvas_data" title="Link to this definition"></a></dt>
+<dd><p>Add Canvas-specific data to a buffer. This is a convenience function
+that adds the Canvas-specific data to the buffer. The Canvas-specific
+data helps to identify the device as a Canvas device that a common
+set of tools can use.</p>
+<p>The Canvas data will take 23 bytes in the buffer. The application should
+chose to use either the advertising buffer or the scan response buffer
+to add the Canvas data depending on how the application will be using
+the advertisement data. There is no reason to include the Canvas data
+in both buffers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config_version</strong> (<em>int</em>) – Configuration version of the device. This
+is a 8-bit value that is incremented each time the configuration
+is changed. The parameter is required, but if an application is not
+using the configuration version, it can be set to 0.</p></li>
+<li><p><strong>network_id</strong> (<em>int</em>) – Network ID of the device. The parameter is
+required, but if an application is not using the network ID, it can
+be set to 0.</p></li>
+<li><p><strong>scan</strong> (<em>bool</em>) – Buffer to which to add. <cite>False</cite> to add to
+advertising buffer or <cite>True</cite> to add to scan response buffer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.add_data">
+<span class="sig-name descname"><span class="pre">add_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scan</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.add_data" title="Link to this definition"></a></dt>
+<dd><p>Add data to a buffer. This function adds raw data bytes into the
+selected buffer. The application must ensure that the buffer
+contents contain proper BLE TLVs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>bytes</em>) – Bytes to add to the buffer</p></li>
+<li><p><strong>scan</strong> (<em>bool</em>) – Buffer to which to add. <cite>False</cite> to add to
+advertising buffer or <cite>True</cite> to add to scan response buffer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.add_ltv">
+<span class="sig-name descname"><span class="pre">add_ltv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scan</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.add_ltv" title="Link to this definition"></a></dt>
+<dd><p>Add a byte-based LTV to a buffer.</p>
+<p>Add manufacturer-specific data to the advertising buffer using a
+manufacturer ID of 0x0201 and data of 0x03, 0x04:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Advertiser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span><span class="o">.</span><span class="n">add_ltv</span><span class="p">(</span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">AD_TYPE_MANU_SPECIFIC</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x01\x02\x03\x04</span><span class="s1">&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> (<em>int</em>) – Tag is a one-byte value defined by the BLE
+specification</p></li>
+<li><p><strong>data</strong> (<em>bytes</em>) – Data to add to the buffer</p></li>
+<li><p><strong>scan</strong> (<em>bool</em>) – Buffer to which to add. <cite>False</cite> to add to
+advertising buffer or <cite>True</cite> to add to scan response buffer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.add_smp_uuid">
+<span class="sig-name descname"><span class="pre">add_smp_uuid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scan</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.add_smp_uuid" title="Link to this definition"></a></dt>
+<dd><p>Add the SMP UUID to a buffer. This is a convenience function
+that adds the SMP UUID to the buffer. The SMP UUID is a 128-bit
+value defined by the BLE specification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scan</strong> (<em>bool</em>) – Buffer to which to add. <cite>False</cite> to add to
+advertising buffer or <cite>True</cite> to add to scan response buffer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.add_tag_string">
+<span class="sig-name descname"><span class="pre">add_tag_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scan</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.add_tag_string" title="Link to this definition"></a></dt>
+<dd><p>Add a string-based LTV to a buffer.</p>
+<p>Add a device name to the scan response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Advertiser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span><span class="o">.</span><span class="n">add_tag_string</span><span class="p">(</span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">AD_TYPE_NAME_COMPLETE</span><span class="p">,</span> <span class="s2">&quot;Canvas&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> (<em>int</em>) – Tag is a one-byte value defined by the BLE
+specification</p></li>
+<li><p><strong>string</strong> (<em>str</em>) – String to add to the buffer</p></li>
+<li><p><strong>scan</strong> (<em>bool</em>) – Buffer to which to add. <cite>False</cite> to add to
+advertising buffer or <cite>True</cite> to add to scan response buffer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.clear_buffer">
+<span class="sig-name descname"><span class="pre">clear_buffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scan</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.clear_buffer" title="Link to this definition"></a></dt>
+<dd><p>Clears a buffer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>scan</strong> (<em>bool</em>) – Buffer to clear. <cite>False</cite> to clear advertising
+buffer or <cite>True</cite> to clear scan response buffer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.set_channel_mask">
+<span class="sig-name descname"><span class="pre">set_channel_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.set_channel_mask" title="Link to this definition"></a></dt>
+<dd><p>Set the channel mask to be used for advertising. The mask is a
+37-bit value with each bit corresponding to a channel. A value of
+1 indicates that the channel will be used. A value of 0 indicates
+that the channel will not be used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mask</strong> (<em>bytes</em>) – Channel mask to use for advertising. Should be 5
+bytes in length. The first byte is the LSB of the mask (channel 0).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.set_directed">
+<span class="sig-name descname"><span class="pre">set_directed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mac</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.set_directed" title="Link to this definition"></a></dt>
+<dd><p>Set the directed advertisement flag and the MAC address of the
+target device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directed</strong> (<em>bool</em>) – <cite>True</cite> if the advertisement should be directed</p></li>
+<li><p><strong>mac</strong> (<em>bytes</em>) – MAC address of the target device. This is a required
+parameter if directed is <cite>True</cite>. If directed is <cite>False</cite>, then this
+parameter must be None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.set_interval">
+<span class="sig-name descname"><span class="pre">set_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.set_interval" title="Link to this definition"></a></dt>
+<dd><p>Set the advertising interval range to be used by the BLE stack. Many
+stacks require a range of values here to allow for some flexibility
+in the scheduling of advertisement packets. The min and max values are
+specified in milliseconds and cannot be the same.</p>
+<p>Advertise interval set to a value between 100 and 200 milliseconds
+(selected by the BLE stack):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Advertiser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span><span class="o">.</span><span class="n">set_interval</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min</strong> (<em>int</em>) – Minimum advertising interval in milliseconds</p></li>
+<li><p><strong>max</strong> (<em>int</em>) – Maximum advertising interval in milliseconds</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.set_phys">
+<span class="sig-name descname"><span class="pre">set_phys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">primary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secondary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.set_phys" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Set the PHYs that will be used for advertising. Values for PHYs should
+be taken from the <cite>canvas_ble.PHY_*</cite> constants. Only one primary PHY
+and one secondary PHY can be used at a time (not a bitmask of PHYs).</p>
+<p>For legacy (non-extended) advertising, only the 1M PHY can be used and
+there is no secondary PHY. For extended advertising, the 1M PHY is the
+default primary PHY and the 2M PHY is the default secondary PHY.</p>
+<p>Valid combinations of PHYs:</p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Primary PHY</p></th>
+<th class="head"><p>Secondary PHY</p></th>
+<th class="head"><p>Lyra 24</p></th>
+<th class="head"><p>Sera NX040</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1M</p></td>
+<td><p>1M</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>1M</p></td>
+<td><p>2M</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>1M</p></td>
+<td><p>Coded</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>2M</p></td>
+<td><p>1M</p></td>
+<td colspan="2" rowspan="3"><p>No, 2M cannot be used as primary</p></td>
+</tr>
+<tr class="row-even"><td><p>2M</p></td>
+<td><p>2M</p></td>
+</tr>
+<tr class="row-odd"><td><p>2M</p></td>
+<td><p>Coded</p></td>
+</tr>
+<tr class="row-even"><td><p>Coded</p></td>
+<td><p>1M</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Coded</p></td>
+<td><p>2M</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>Coded</p></td>
+<td><p>Coded</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>Advertise using only the 1M PHY for both primary and secondary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Advertiser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span><span class="o">.</span><span class="n">set_phys</span><span class="p">(</span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">PHY_1M</span><span class="p">,</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">PHY_1M</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">param int primary<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Primary PHY to use for advertising</p>
+</dd>
+<dt class="field-even">param int secondary<span class="colon">:</span></dt>
+<dd class="field-even"><p>Secondary PHY to use for advertising</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.set_properties">
+<span class="sig-name descname"><span class="pre">set_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connectable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scannable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extended</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.set_properties" title="Link to this definition"></a></dt>
+<dd><p>Set the advertisement properties.</p>
+<p>A <cite>connectable</cite> advertisement allows a BLE central device to connect
+to this device.</p>
+<p>A <cite>scannable</cite> advertisement allows a BLE central device to scan for
+this device and receive additional scan response data from the device
+on top of the regular advertisement data.</p>
+<p>An <cite>extended</cite> advertisement allows the use of PHYs other than the 1M
+PHY for advertising. Extended advertising is required for the use of
+the 2M PHY or the coded PHY. The extended advertisement also allows
+for a considerably larger advertisement buffer (platform-dependent).</p>
+<p>An extended advertisement cannot be both connectable and scannable.</p>
+<p>For the Lyra products, if a non-extended advertisement is connectable,
+it must also be scannable.</p>
+<p>Use legacy advertising:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Advertiser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use extended advertising with a connectable advertisement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Advertiser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">advertiser</span><span class="o">.</span><span class="n">set_properties</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connectable</strong> (<em>bool</em>) – <cite>True</cite> if the advertisement should be connectable</p></li>
+<li><p><strong>scannable</strong> (<em>bool</em>) – <cite>True</cite> if the advertisement should be scannable</p></li>
+<li><p><strong>extended</strong> (<em>bool</em>) – <cite>True</cite> if extended advertising should be used</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.start" title="Link to this definition"></a></dt>
+<dd><p>Start advertising. The advertising buffer is copied into the BLE
+stack and the advertising is started. The application can continue
+to update the advertising buffer and call update() to change the
+advertising data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.stop" title="Link to this definition"></a></dt>
+<dd><p>Stop advertising.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Advertiser.update" title="Link to this definition"></a></dt>
+<dd><p>Update the advertising data. The advertising buffer is copied into
+the BLE stack and the advertising continues.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Advertiser.validate_data">
+<span class="sig-name descname"><span class="pre">validate_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#canvas_ble.Advertiser.validate_data" title="Link to this definition"></a></dt>
+<dd><p>Perform a validation test on the advertising and scan buffers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>True</cite> if the buffers contain valid LTVs or <cite>False</cite> if there
+is an error in either buffer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="canvas_ble.Connection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">Connection</span></span><a class="headerlink" href="#canvas_ble.Connection" title="Link to this definition"></a></dt>
+<dd><p>The Connection class provides handling of connections to other BLE devices.
+Connections can be in either Central or Peripheral roles.</p>
+<p>When in a Peripheral role, the <a class="reference internal" href="#canvas_ble.set_periph_callbacks" title="canvas_ble.set_periph_callbacks"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_periph_callbacks()</span></code></a> function is
+used to set up callbacks for connection and disconnection events.</p>
+<p>The <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object is passed into this callback so it can be
+saved by the script for later use.</p>
+<p>When in a Central role, the <a class="reference internal" href="#canvas_ble.connect" title="canvas_ble.connect"><code class="xref py py-func docutils literal notranslate"><span class="pre">connect()</span></code></a> function is used to initiate
+a connection. This function takes individual callback functions for when this
+particular connection is fully connected and for when it is fully
+disconnected.</p>
+<p>The <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object should not be created directly. Instead,
+it is created by the BLE stack when a connection is made.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Connection.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Connection.disconnect" title="Link to this definition"></a></dt>
+<dd><p>Disconnect the connection.</p>
+<p>The <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object should no longer be used after
+this method is called.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Connection.get_addr">
+<span class="sig-name descname"><span class="pre">get_addr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#canvas_ble.Connection.get_addr" title="Link to this definition"></a></dt>
+<dd><p>Return the address of the connected device for this connection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The address of the connected device as a bytes array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Connection.get_rssi">
+<span class="sig-name descname"><span class="pre">get_rssi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#canvas_ble.Connection.get_rssi" title="Link to this definition"></a></dt>
+<dd><p>Return the RSSI of the connection</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The RSSI of the connection as a signed value in dBm.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="canvas_ble.GattClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">GattClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><span class="pre">Connection</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattClient" title="Link to this definition"></a></dt>
+<dd><p>The GattClient class allows a device to discover and interact
+with the GATT server on a remotely-connected BLE device.</p>
+<p>All functions use <cite>__errCode</cite> to return a standard error code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connection</strong> (<a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><em>Connection</em></a>) – The <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object
+associated with the BLE connection to use for the GATT client.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.discover">
+<span class="sig-name descname"><span class="pre">discover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattClient.discover" title="Link to this definition"></a></dt>
+<dd><p>Before interaction with a remote GATT server, the GATT database
+must be discovered. This discovery creates and populates an internal
+database of GATT services, characteristics, and descriptors.</p>
+<p>The discovered database can be augmented by assigning friendly
+names to UUIDs after discovery by using the <a class="reference internal" href="#canvas_ble.GattClient.set_name" title="canvas_ble.GattClient.set_name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_name()</span></code></a>
+method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.enable">
+<span class="sig-name descname"><span class="pre">enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattClient.enable" title="Link to this definition"></a></dt>
+<dd><p>Enable or disable a CCCD with the given identifier.
+A CCCD enables or disables a notification or indication</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gatt_client</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s2">&quot;b8d00002-6329-ef96-8a4d-55b376d8b25a&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">gatt_client</span><span class="o">.</span><span class="n">CCCD_STATE_NOTIFY</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uuid</strong> (<em>str</em>) – A string representation of an identifier
+present within the GATT database that is to be set.
+If this identifier is not present in the GATT database or is
+not for a CCCD an error will occurr.</p></li>
+<li><p><strong>enable</strong> (<em>int</em>) – <p>The value of this parameter should be
+set to:</p>
+<ul>
+<li><p><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_DISABLE" title="canvas_ble.GattClient.CCCD_STATE_DISABLE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattClient.CCCD_STATE_DISABLE</span></code></a> to
+disable notifications and indications.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_NOTIFY" title="canvas_ble.GattClient.CCCD_STATE_NOTIFY"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattClient.CCCD_STATE_NOTIFY</span></code></a> to
+enable only notifications.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_INDICATE" title="canvas_ble.GattClient.CCCD_STATE_INDICATE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattClient.CCCD_STATE_INDICATE</span></code></a> to
+enable only indications.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_BOTH" title="canvas_ble.GattClient.CCCD_STATE_BOTH"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattClient.CCCD_STATE_BOTH</span></code></a> to
+enable both notifications and indications.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.get_dict">
+<span class="sig-name descname"><span class="pre">get_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#canvas_ble.GattClient.get_dict" title="Link to this definition"></a></dt>
+<dd><p>Returns a dictionary describing the discovered GATT database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a dictionary describing the discovered GATT database.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#canvas_ble.GattClient.read" title="Link to this definition"></a></dt>
+<dd><p>Read the value of a characteristic identified by the given
+UUID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>identifier</strong> (<em>str</em>) – A string representation of an
+identifier present within the GATT database that is
+to be read. If this identifier is not present in the GATT
+database or is not of a readable type an error will occurr.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytes containing the data read.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.set_callbacks">
+<span class="sig-name descname"><span class="pre">set_callbacks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattClient.set_callbacks" title="Link to this definition"></a></dt>
+<dd><p>Callbacks can be set for any notifications or indications the
+GATT Server might make.</p>
+<p>The callback function will be passed a named tuple containing
+the following entries:</p>
+<dl class="simple">
+<dt>connection</dt><dd><p>The <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object for which the event was
+caused.</p>
+</dd>
+<dt>UUID</dt><dd><p>The UUID if the characteristic that this event is assocated
+with.</p>
+</dd>
+<dt>name</dt><dd><p>If a name has been set for the UUID, it is included.</p>
+</dd>
+<dt>data</dt><dd><p><cite>bytes</cite> data attached to the event.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">notify_cb</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Notification from </span><span class="si">{}</span><span class="s2"> on UUID </span><span class="si">{}</span><span class="s2"> with data </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">canvas_ble</span><span class="o">.</span><span class="n">addr_to_str</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">get_addr</span><span class="p">()),</span>
+<span class="gp">... </span>        <span class="n">event</span><span class="o">.</span><span class="n">uuid</span><span class="p">,</span> <span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">set_callbacks</span><span class="p">(</span><span class="n">notify_cb</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>notify</strong> – A callback to be called when a
+notification is recieved from the connected server.</p></li>
+<li><p><strong>indicate</strong> – A callback to be called when an
+indication is recieved from the connected server.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.set_name">
+<span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattClient.set_name" title="Link to this definition"></a></dt>
+<dd><p>Once a GATT database has been discovered a more descriptive
+name can be given to the services, characteristics and
+descriptors stored in it. These names can be given in place
+of a UUID for <cite>identifier</cite> parameters to methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uuid</strong> (<em>str</em>) – A string representation of a UUID present
+in the GATT database.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – A unique, within the GATT database, string
+that can be used to refer to GATT object instead of its UUID.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattClient.write" title="Link to this definition"></a></dt>
+<dd><p>Write a value to a characteristic identified by the given
+identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>identifier</strong> (<em>str</em>) – A string representation of a identifier
+present within the GATT database that is to be written.
+If this identifier is not present in the GATT database or is
+not of a writable type an error will occurr.</p></li>
+<li><p><strong>data</strong> (<em>bytes</em>) – bytes containing the data to be written</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.CCCD_STATE_BOTH">
+<span class="sig-name descname"><span class="pre">CCCD_STATE_BOTH</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattClient.CCCD_STATE_BOTH" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Enable both notifications and indications</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.CCCD_STATE_DISABLE">
+<span class="sig-name descname"><span class="pre">CCCD_STATE_DISABLE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattClient.CCCD_STATE_DISABLE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Disable notifications and indications</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.CCCD_STATE_INDICATE">
+<span class="sig-name descname"><span class="pre">CCCD_STATE_INDICATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattClient.CCCD_STATE_INDICATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Enable Indications</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.CCCD_STATE_NOTIFY">
+<span class="sig-name descname"><span class="pre">CCCD_STATE_NOTIFY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattClient.CCCD_STATE_NOTIFY" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Enable Notifications</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="canvas_ble.GattServer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">GattServer</span></span><a class="headerlink" href="#canvas_ble.GattServer" title="Link to this definition"></a></dt>
+<dd><p>The GattServer class allows creation and use of a GATT Server on the
+device.</p>
+<p>Only one instance of the GattServer class should ever be created.
+Multiple GattServer instances are not supported at this time.</p>
+<p>“Read” and “Write” functionality are from the CLIENT perspective.
+e.g. A “Read”able characteristic will have data written to it by
+this GattServer class and be read by the client and vice versa.</p>
+<p>All functions use <cite>__errCode</cite> to return a standard error code.</p>
+<section id="gatt-server-event-constants">
+<h2>GATT Server Event Constants<a class="headerlink" href="#gatt-server-event-constants" title="Link to this heading"></a></h2>
+<p>The GATT server can cause the stack to raise a number of different
+events for each characteristic. These events can be received by the
+caller by use of a callback (see <a class="reference internal" href="#canvas_ble.GattServer.build_from_dict" title="canvas_ble.GattServer.build_from_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">build_from_dict()</span></code></a>).</p>
+<p>As only a single callback is available for each event, the
+<cite>EVENT_*</cite> constants are used to indicate the specific event that
+caused the callback to be triggered.</p>
+</section>
+<section id="gatt-server-callbacks">
+<h2>GATT Server Callbacks<a class="headerlink" href="#gatt-server-callbacks" title="Link to this heading"></a></h2>
+<p>Characteristics can sometimes need to respond to events. This is
+achieved through the use of a callback system. A callback can be
+specified when defining a characteristic in the GATT Server
+dictionary.</p>
+<p>A callback is a Python function that recieves a named tuple
+as a parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_callback</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Depending on the underlying event causing the callback to be called
+the event tuple will have various named members. These can be one or
+more of:</p>
+<dl class="simple">
+<dt>type</dt><dd><p>The type of event. This is always present.</p>
+</dd>
+<dt>connection</dt><dd><p>The connection object of the connection that
+caused the event. This is always present.</p>
+</dd>
+<dt>name</dt><dd><p>The name of the characteristic that caused the event.
+This is present in:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#canvas_ble.GattServer.EVENT_ATTR_VALUE" title="canvas_ble.GattServer.EVENT_ATTR_VALUE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattServer.EVENT_ATTR_VALUE</span></code></a></p></li>
+<li><p><a class="reference internal" href="#canvas_ble.GattServer.EVENT_INDICATION_OK" title="canvas_ble.GattServer.EVENT_INDICATION_OK"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattServer.EVENT_INDICATION_OK</span></code></a></p></li>
+<li><p><a class="reference internal" href="#canvas_ble.GattServer.EVENT_CCCD_NONE" title="canvas_ble.GattServer.EVENT_CCCD_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattServer.EVENT_CCCD_NONE</span></code></a></p></li>
+<li><p><a class="reference internal" href="#canvas_ble.GattServer.EVENT_CCCD_NOTIFY" title="canvas_ble.GattServer.EVENT_CCCD_NOTIFY"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattServer.EVENT_CCCD_NOTIFY</span></code></a></p></li>
+<li><p><a class="reference internal" href="#canvas_ble.GattServer.EVENT_CCCD_INDICATE" title="canvas_ble.GattServer.EVENT_CCCD_INDICATE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattServer.EVENT_CCCD_INDICATE</span></code></a></p></li>
+<li><p><a class="reference internal" href="#canvas_ble.GattServer.EVENT_CCCD_BOTH" title="canvas_ble.GattServer.EVENT_CCCD_BOTH"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattServer.EVENT_CCCD_BOTH</span></code></a></p></li>
+</ul>
+</dd>
+<dt>data</dt><dd><p>The characteristics new value as bytes. This is present in:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#canvas_ble.GattServer.EVENT_ATTR_VALUE" title="canvas_ble.GattServer.EVENT_ATTR_VALUE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattServer.EVENT_ATTR_VALUE</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<p>If <a class="reference internal" href="#canvas_ble.GattServer.EVENT_INDICATION_TIMEOUT" title="canvas_ble.GattServer.EVENT_INDICATION_TIMEOUT"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattServer.EVENT_INDICATION_TIMEOUT</span></code></a> is
+received, the connection concerned is deemed to have failed. If
+the disconnect callback from <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> has not been
+recieved and dealt with then the connection should be closed and
+deleted when an event of type
+<code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattServer.INDICATION_TIMEOUT</span></code> is received.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.build_from_dict">
+<span class="sig-name descname"><span class="pre">build_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattServer.build_from_dict" title="Link to this definition"></a></dt>
+<dd><p>Builds the GATT server from a correctly formatted dictionary.</p>
+<p>The format of the GATT server dictionary is as follows.
+Services are a dictionary containing description keys and a
+dictionary of Characteristics
+Characteristics are a dictionary containing only description keys.</p>
+<p>The GATT server is NOT started after this function is used.</p>
+<p>Available description keys are:</p>
+<dl>
+<dt>“Service N”</dt><dd><p>Indicates a Service dictionary where N is a unique identifier
+within the GATT server dictionary.</p>
+</dd>
+<dt>“Characteristic N”</dt><dd><p>Indicates a Characteristic dictionary where N is a unique
+identifier within the Service dictionary.</p>
+</dd>
+<dt>“UUID”</dt><dd><p>A string hexadecimal representation of the service or
+characteristics UUID. 16 and 128 bit UUIDs are supported.
+128 bit UUIDS can be formatted using ‘-’ characters for clarity
+(e.g., “b8d00002-6329-ef96-8a4d-55b376d8b25a”).</p>
+</dd>
+<dt>“Name”</dt><dd><p>A unique name for the service or characteristic. This is best
+kept short yet descriptive and is used to reference that
+individual item.</p>
+</dd>
+<dt>“Capability”</dt><dd><p>Defines the characteristic type. Available types are currently:</p>
+<dl class="simple">
+<dt>“Read”</dt><dd><p>The characteristic can be read by the connected client.</p>
+</dd>
+<dt>“Write”</dt><dd><p>The characteristic can be written to by the connected client.
+No acknowlegement is provided by the server.</p>
+</dd>
+<dt>“WriteAck”</dt><dd><p>The characteristic can be written to by the connected client.
+The write will be acknowledged by the server.</p>
+</dd>
+<dt>“Notify”</dt><dd><p>The characteristic can be used to notify the connected client
+of a changed value. The notification is not acknowledged by
+the client. An applicable CCCD will automatically be created
+for this characteristic.</p>
+</dd>
+<dt>“Indicate”</dt><dd><p>The characteristic can be used to notify the connected client
+of a changed value. The notification will be acknowledged by
+the client. An applicable CCCD will automatically be created
+for this characteristic.</p>
+</dd>
+</dl>
+<p>Note some types can be combined. Currently, these are:</p>
+<ul class="simple">
+<li><p>“Read Write”</p></li>
+<li><p>“Read WriteAck”</p></li>
+</ul>
+</dd>
+<dt>“Length”</dt><dd><p>The length the data in the characteristic in bytes. The data is
+initialised to zeros upon the GATT server being started.</p>
+</dd>
+<dt>“Read Encryption”</dt><dd><p>Defines the level of read encryption for this characteristic.
+Available values are:</p>
+<dl class="simple">
+<dt>“None”</dt><dd><p>No encryption</p>
+</dd>
+<dt>“Encrypt”</dt><dd><p>Requires bonding and encrypted connection.</p>
+</dd>
+<dt>“Mitm”</dt><dd><p>Requires authenticated pairing and encrypted connection.</p>
+</dd>
+</dl>
+</dd>
+<dt>“Write Encryption”</dt><dd><p>Defines the level of write encryption for this characteristic.
+Values as per “Read Encryption”.</p>
+</dd>
+<dt>“Callback”</dt><dd><p>Provides the facility to supply a callback to allow the script
+to receive events pertaining to the characteristic.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>description</strong> – The dictionary containing the GATT server
+description.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.indicate">
+<span class="sig-name descname"><span class="pre">indicate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><span class="pre">Connection</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattServer.indicate" title="Link to this definition"></a></dt>
+<dd><p>Indicates to the client through the named characteristic with a
+value.
+The characteristic must have the “Indicate” capability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection</strong> (<a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><em>Connection</em></a>) – The connection to be used. This is
+the <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> class object.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of the characteristic to use for the
+indication.</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value to be used in the indication.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><span class="pre">Connection</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattServer.notify" title="Link to this definition"></a></dt>
+<dd><p>Notifies the client through the named characteristic with a value.
+The characteristic must have the “Notify” capability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>connection</strong> (<a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><em>Connection</em></a>) – The connection to be used. This is
+the <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> class object.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of the characteristic to use for the
+notification.</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value to be used in the notification.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#canvas_ble.GattServer.read" title="Link to this definition"></a></dt>
+<dd><p>Reads the current value of a “Write” characteristic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The “Name” of the characteristic to be read</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytes containing the data read.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattServer.start" title="Link to this definition"></a></dt>
+<dd><p>Starts the GATT server.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattServer.stop" title="Link to this definition"></a></dt>
+<dd><p>Stops the GATT server.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattServer.write" title="Link to this definition"></a></dt>
+<dd><p>Writes a new value into a “Read” characteristic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The “Name” of the characteristic to be written</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The new value to be written.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.EVENT_ATTR_VALUE">
+<span class="sig-name descname"><span class="pre">EVENT_ATTR_VALUE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattServer.EVENT_ATTR_VALUE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Raised when a client writes to a writeable characteristic.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.EVENT_CCCD_BOTH">
+<span class="sig-name descname"><span class="pre">EVENT_CCCD_BOTH</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattServer.EVENT_CCCD_BOTH" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Raised when a client sets a Characteristics CCCD so both notifications
+and indications are enabled.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.EVENT_CCCD_INDICATE">
+<span class="sig-name descname"><span class="pre">EVENT_CCCD_INDICATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattServer.EVENT_CCCD_INDICATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Raised when a client sets a Characteristics CCCD so indications
+are enabled.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.EVENT_CCCD_NONE">
+<span class="sig-name descname"><span class="pre">EVENT_CCCD_NONE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattServer.EVENT_CCCD_NONE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Raised when a client sets a Characteristics CCCD so both
+notifications and indications are disabled.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.EVENT_CCCD_NOTIFY">
+<span class="sig-name descname"><span class="pre">EVENT_CCCD_NOTIFY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattServer.EVENT_CCCD_NOTIFY" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Raised when a client sets a Characteristics CCCD so notifications
+are enabled.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.EVENT_INDICATION_OK">
+<span class="sig-name descname"><span class="pre">EVENT_INDICATION_OK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattServer.EVENT_INDICATION_OK" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Raised when an indication is acknowledged</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.GattServer.EVENT_INDICATION_TIMEOUT">
+<span class="sig-name descname"><span class="pre">EVENT_INDICATION_TIMEOUT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattServer.EVENT_INDICATION_TIMEOUT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Raised when an indication exceeds it’s acknowlegement timeout</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="canvas_ble.Scanner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">Scanner</span></span><a class="headerlink" href="#canvas_ble.Scanner" title="Link to this definition"></a></dt>
+<dd><p>Class for BLE scanning. This class is a singleton, only one scanner can be
+instantiated at a time. Attempting to instantiate a second scanner will
+return the existing instance.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">scan_cb</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received advertisement from </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">addr_to_str</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">addr</span><span class="p">)))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  RSSI: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">rssi</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Type: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Data: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Scanner</span><span class="p">(</span><span class="n">scan_cb</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cb</strong> – <p>Callback function to be called when a BLE advertisement is
+received. The callback function must accept a single argument, which will
+be a named tuple of the form (rssi, type, data, addr). The <cite>rssi</cite> is the
+received signal strength indicator, the <cite>type</cite> is the advertisement type,
+the <cite>data</cite> is the advertisement data, and the <cite>addr</cite> is the MAC address
+of the device that sent the advertisement. ‘type’ will be a bitmask of
+one or more of the following values:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.TYPE_CONNECTABLE" title="canvas_ble.Scanner.TYPE_CONNECTABLE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.TYPE_CONNECTABLE</span></code></a>: Connectable advertisement.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.TYPE_SCANNABLE" title="canvas_ble.Scanner.TYPE_SCANNABLE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.TYPE_SCANNABLE</span></code></a>: Scannable advertisement.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.TYPE_DIRECTED" title="canvas_ble.Scanner.TYPE_DIRECTED"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.TYPE_DIRECTED</span></code></a>: Directed advertisement.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.TYPE_SCAN_RESPONSE" title="canvas_ble.Scanner.TYPE_SCAN_RESPONSE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.TYPE_SCAN_RESPONSE</span></code></a>: Scan response.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.TYPE_LEGACY" title="canvas_ble.Scanner.TYPE_LEGACY"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.TYPE_LEGACY</span></code></a>: Legacy advertisement.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.TYPE_EXTENDED" title="canvas_ble.Scanner.TYPE_EXTENDED"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.TYPE_EXTENDED</span></code></a>: Extended advertisement.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.filter_add">
+<span class="sig-name descname"><span class="pre">filter_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Scanner.filter_add" title="Link to this definition"></a></dt>
+<dd><p>Add a filter to the scanner.</p>
+<p>In areas where there is a lot of BLE advertisements, it may be desirable
+to filter the advertisements. This function allows the user to set filters
+on the scanner to only receive advertisements that match the filter. This
+helps to reduce the processing time needed to handle advertisements and
+allows the Python application to focus only on the advertisements that
+are of interest.</p>
+<p>The <cite>type</cite> parameter is the type of the filter to set on the advertisement
+data. The <cite>data</cite> parameter is particular to the type of filter being set.</p>
+<p>The following filter types are supported:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.FILTER_NAME" title="canvas_ble.Scanner.FILTER_NAME"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.FILTER_NAME</span></code></a>: The <cite>data</cite> parameter is a string. The
+name of the device in the advertisement must match the string in its entirety.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.FILTER_UUID" title="canvas_ble.Scanner.FILTER_UUID"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.FILTER_UUID</span></code></a>: The <cite>data</cite> parameter is a UUID string.
+The size of the data determines the UUID type to filter on. Two bytes of data
+are required for a 16-bit UUID, four bytes of data are required for a 32-bit
+UUID, and 16 bytes of data are required for a 128-bit UUID.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.FILTER_ADDR" title="canvas_ble.Scanner.FILTER_ADDR"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.FILTER_ADDR</span></code></a>: The <cite>data</cite> parameter is a BLE address byte
+string.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.FILTER_MANUF_DATA" title="canvas_ble.Scanner.FILTER_MANUF_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.FILTER_MANUF_DATA</span></code></a>: The <cite>data</cite> parameter is a byte string
+of manufacturer data. This data is compared to the manufacturer data in the
+advertisement. The first two bytes of the data are always the manufacturer ID.
+The filter data can be smaller than the advertisement data to allow matching only
+on the manufacturer ID or manufacturer ID and a portion of the manufacturer-
+specific data.</p></li>
+<li><p><a class="reference internal" href="#canvas_ble.Scanner.FILTER_DATA" title="canvas_ble.Scanner.FILTER_DATA"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.Scanner.FILTER_DATA</span></code></a>: The <cite>data</cite> parameter is a byte string
+of generic data. The filter matches if the data in the advertisement contains
+the filter data in its entirety at any location.</p></li>
+</ul>
+<p>Example to filter on device name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Scanner</span><span class="p">(</span><span class="n">scan_cb</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span><span class="o">.</span><span class="n">filter_add</span><span class="p">(</span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">Scanner</span><span class="o">.</span><span class="n">FILTER_NAME</span><span class="p">,</span> <span class="s2">&quot;Canvas&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>int</em>) – Type of filter to set.</p></li>
+<li><p><strong>data</strong> (<em>bytes</em>) – Filter data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.filter_reset">
+<span class="sig-name descname"><span class="pre">filter_reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Scanner.filter_reset" title="Link to this definition"></a></dt>
+<dd><p>Remove all of the filters from the scanner.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.set_phys">
+<span class="sig-name descname"><span class="pre">set_phys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Scanner.set_phys" title="Link to this definition"></a></dt>
+<dd><p>Set the PHYs to scan on. The <cite>phys</cite> parameter is a bitmask of the PHYs
+to scan on. The bitmask is a combination of the following values:
+<a class="reference internal" href="#canvas_ble.PHY_1M" title="canvas_ble.PHY_1M"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.PHY_1M</span></code></a>, <a class="reference internal" href="#canvas_ble.PHY_2M" title="canvas_ble.PHY_2M"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.PHY_2M</span></code></a>,
+and <a class="reference internal" href="#canvas_ble.PHY_CODED" title="canvas_ble.PHY_CODED"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.PHY_CODED</span></code></a>.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Scanner</span><span class="p">(</span><span class="n">scan_cb</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span><span class="o">.</span><span class="n">set_phys</span><span class="p">(</span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">PHY_1M</span> <span class="o">|</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">PHY_2M</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>phys</strong> (<em>int</em>) – Bitmask of the PHYs to scan on.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.set_timing">
+<span class="sig-name descname"><span class="pre">set_timing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Scanner.set_timing" title="Link to this definition"></a></dt>
+<dd><p>Set the scan timing. The <cite>interval_ms</cite> parameter is the scan interval in
+milliseconds, and the <cite>window_ms</cite> parameter is the scan window in
+milliseconds. The scan window must be less than or equal to the scan
+interval.</p>
+<p>Example to scan roughly 50% of the time (50 milliseconds out of every
+100 milliseconds):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Scanner</span><span class="p">(</span><span class="n">scan_cb</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span><span class="o">.</span><span class="n">set_timing</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interval_ms</strong> (<em>int</em>) – Scan interval in milliseconds.</p></li>
+<li><p><strong>window_ms</strong> (<em>int</em>) – Scan window in milliseconds.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">active</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Scanner.start" title="Link to this definition"></a></dt>
+<dd><p>Start the scanner. The <cite>active</cite> parameter is a boolean value that
+indicates whether the scanner should be active or passive. If the
+value is <cite>True</cite>, the scanner will send scan requests to devices that
+advertise with a scannable advertisement type. If the value is <cite>False</cite>,
+the scanner will not send scan requests.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>active</strong> (<em>bool</em>) – Boolean value indicating whether the scanner should be
+active (<cite>True</cite>) or passive (<cite>False</cite>).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.Scanner.stop" title="Link to this definition"></a></dt>
+<dd><p>Stop the scanner.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.FILTER_ADDR">
+<span class="sig-name descname"><span class="pre">FILTER_ADDR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.FILTER_ADDR" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Filter on device MAC address.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.FILTER_DATA">
+<span class="sig-name descname"><span class="pre">FILTER_DATA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.FILTER_DATA" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Filter on generic bytes in advertisement.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.FILTER_MANUF_DATA">
+<span class="sig-name descname"><span class="pre">FILTER_MANUF_DATA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.FILTER_MANUF_DATA" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Filter on bytes from manufacturer-specific data in advertisement.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.FILTER_NAME">
+<span class="sig-name descname"><span class="pre">FILTER_NAME</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.FILTER_NAME" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Filter on device name in advertisement.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.FILTER_UUID">
+<span class="sig-name descname"><span class="pre">FILTER_UUID</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.FILTER_UUID" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Filter on UUID in advertisement.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.TYPE_CONNECTABLE">
+<span class="sig-name descname"><span class="pre">TYPE_CONNECTABLE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.TYPE_CONNECTABLE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Connectable advertisement.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.TYPE_DIRECTED">
+<span class="sig-name descname"><span class="pre">TYPE_DIRECTED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.TYPE_DIRECTED" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Directed advertisement.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.TYPE_EXTENDED">
+<span class="sig-name descname"><span class="pre">TYPE_EXTENDED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.TYPE_EXTENDED" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Extended advertisement.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.TYPE_LEGACY">
+<span class="sig-name descname"><span class="pre">TYPE_LEGACY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.TYPE_LEGACY" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Legacy (not extended) advertisement.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.TYPE_SCANNABLE">
+<span class="sig-name descname"><span class="pre">TYPE_SCANNABLE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.TYPE_SCANNABLE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Scannable advertisement.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_ble.Scanner.TYPE_SCAN_RESPONSE">
+<span class="sig-name descname"><span class="pre">TYPE_SCAN_RESPONSE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.Scanner.TYPE_SCAN_RESPONSE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Scan response data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="canvas_ble.addr_to_str">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">addr_to_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#canvas_ble.addr_to_str" title="Link to this definition"></a></dt>
+<dd><p>Convert a BLE address into a printable string.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mine</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">my_addr</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mine</span>
+<span class="go">b&#39;\x01\xd3\xae\\~\xa8\xf7&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">addr_to_str</span><span class="p">(</span><span class="n">mine</span><span class="p">)</span>
+<span class="go">&#39;01f7a87e5caed3&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>addr</strong> (<em>bytes</em>) – The BLE address to convert.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string representation of the address.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="canvas_ble.connect">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cb_con</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cb_discon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><span class="pre">Connection</span></a></span></span><a class="headerlink" href="#canvas_ble.connect" title="Link to this definition"></a></dt>
+<dd><p>Initiate a connection when in a Central role.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">connection_cb</span><span class="p">(</span><span class="n">conn</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection established with </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">canvas_ble</span><span class="o">.</span><span class="n">addr_to_str</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">get_addr</span><span class="p">())))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">disconnection_cb</span><span class="p">(</span><span class="n">conn</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection closed with </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">canvas_ble</span><span class="o">.</span><span class="n">addr_to_str</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">get_addr</span><span class="p">())))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">addr</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">str_to_addr</span><span class="p">(</span><span class="s2">&quot;01f7a87e5caed3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">PHY_1M</span><span class="p">,</span> <span class="n">connection_cb</span><span class="p">,</span> <span class="n">disconnection_cb</span><span class="p">)</span>
+<span class="go">Connection established with 01f7a87e5caed3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span><span class="o">-&gt;</span><span class="n">disconnect</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>addr</strong> (<em>bytes</em>) – A bytes object containing the BLE address to connect to.
+<a class="reference internal" href="#canvas_ble.str_to_addr" title="canvas_ble.str_to_addr"><code class="xref py py-func docutils literal notranslate"><span class="pre">canvas_ble.str_to_addr()</span></code></a> can be used to create this from an appropriate
+string.</p></li>
+<li><p><strong>phy</strong> (<em>int</em>) – The PHY to use (one of the <cite>canvas_ble.PHY_*</cite> constants)</p></li>
+<li><p><strong>cb_con</strong> – A callback used when a connection has been established</p></li>
+<li><p><strong>cb_discon</strong> – A callback used when the connection ends</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object for the new connection or <cite>None</cite>
+on error.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="canvas_ble.find_ltv">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">find_ltv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ad</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#canvas_ble.find_ltv" title="Link to this definition"></a></dt>
+<dd><p>Find the first LTV (length, type, value) tuple in the advertisement data
+that matches the given type. The <cite>type</cite> parameter is the type of the LTV
+to find. The <cite>ad</cite> parameter is the advertisement data to search.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">scan_cb</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">ltv</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">find_ltv</span><span class="p">(</span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">AD_TYPE_NAME_COMPLETE</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">ltv</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Device name: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ltv</span><span class="o">.</span><span class="n">decode</span><span class="p">()))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">Scanner</span><span class="p">(</span><span class="n">scan_cb</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scanner</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>int</em>) – Type of LTV to find.</p></li>
+<li><p><strong>ad</strong> (<em>bytes</em>) – Advertisement data to search.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A bytes object containing the value of the LTV tuple found or
+<cite>None</cite> if no LTV tuple matches the given type. If a matching LTV occurs
+more than once in the advertising data, only the first occurrence will
+be returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="canvas_ble.init">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.init" title="Link to this definition"></a></dt>
+<dd><p>Initialize the BLE stack. This function must be called before any other
+function in this module. It should only be called once.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="canvas_ble.my_addr">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">my_addr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#canvas_ble.my_addr" title="Link to this definition"></a></dt>
+<dd><p>Get the local BLE address.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mine</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">my_addr</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mine</span>
+<span class="go">b&#39;\x01\xd3\xae\\~\xa8\xf7&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">addr_to_str</span><span class="p">(</span><span class="n">mine</span><span class="p">)</span>
+<span class="go">&#39;01f7a87e5caed3&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The BLE address of the local device.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="canvas_ble.set_periph_callbacks">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">set_periph_callbacks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">con</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.set_periph_callbacks" title="Link to this definition"></a></dt>
+<dd><p>Set the callbacks to be used when the device is operating in a Peripheral
+role. The callback functions will take a <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object
+as their parameter.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">connection_cb</span><span class="p">(</span><span class="n">conn</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection established with </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">canvas_ble</span><span class="o">.</span><span class="n">addr_to_str</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">get_addr</span><span class="p">())))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">disconnection_cb</span><span class="p">(</span><span class="n">conn</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection closed with </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">canvas_ble</span><span class="o">.</span><span class="n">addr_to_str</span><span class="p">(</span><span class="n">conn</span><span class="o">.</span><span class="n">get_addr</span><span class="p">())))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">set_periph_callbacks</span><span class="p">(</span><span class="n">connection_cb</span><span class="p">,</span> <span class="n">disconnection_cb</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>con</strong> – A callback used when a connection is made</p></li>
+<li><p><strong>discon</strong> – A callback used when a disconnection is made</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="canvas_ble.str_to_addr">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">str_to_addr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">addr_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#canvas_ble.str_to_addr" title="Link to this definition"></a></dt>
+<dd><p>Convert a BLE address string into a binary representation usable by
+the BLE stack.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mine</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">my_addr</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mine</span>
+<span class="go">b&#39;\x01\xd3\xae\\~\xa8\xf7&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mine_str</span> <span class="o">=</span> <span class="n">canvas_ble</span><span class="o">.</span><span class="n">addr_to_str</span><span class="p">(</span><span class="n">mine</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mine_str</span>
+<span class="go">&#39;01f7a87e5caed3&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">canvas_ble</span><span class="o">.</span><span class="n">str_to_addr</span><span class="p">(</span><span class="n">mine_str</span><span class="p">)</span>
+<span class="go">b&#39;\x01\xd3\xae\\~\xa8\xf7&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>addr_str</strong> (<em>str</em>) – The BLE address string to convert.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A binary representation of the address.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_FLAGS">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_FLAGS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_FLAGS" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for flags</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_MANU_SPECIFIC">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_MANU_SPECIFIC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_MANU_SPECIFIC" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for manufacturer-specific data</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_NAME_COMPLETE">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_NAME_COMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_NAME_COMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for a complete device name</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_NAME_SHORT">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_NAME_SHORT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_NAME_SHORT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for a shortened device name</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_UUID128_COMPLETE">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_UUID128_COMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_UUID128_COMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for a complete list of 128-bit UUIDs</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_UUID128_INCOMPLETE">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_UUID128_INCOMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_UUID128_INCOMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for an incomplete list of 128-bit UUIDs</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_UUID16_COMPLETE">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_UUID16_COMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_UUID16_COMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for a complete list of 16-bit UUIDs</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_UUID16_INCOMPLETE">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_UUID16_INCOMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_UUID16_INCOMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for an incomplete list of 16-bit UUIDs</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_UUID32_COMPLETE">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_UUID32_COMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_UUID32_COMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for a complete list of 32-bit UUIDs</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.AD_TYPE_UUID32_INCOMPLETE">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">AD_TYPE_UUID32_INCOMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.AD_TYPE_UUID32_INCOMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Advertisement type value for an incomplete list of 32-bit UUIDs</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.PHY_125K">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">PHY_125K</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.PHY_125K" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Coded PHY at 125kbits/sec</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.PHY_1M">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">PHY_1M</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.PHY_1M" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>1M PHY</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.PHY_2M">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">PHY_2M</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.PHY_2M" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>2M PHY</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.PHY_500K">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">PHY_500K</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.PHY_500K" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Coded PHY at 500kbits/sec</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="canvas_ble.PHY_CODED">
+<span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">PHY_CODED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.PHY_CODED" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Coded PHY, generic</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="canvas.html" class="btn btn-neutral float-left" title="General" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="canvas_uwb.html" class="btn btn-neutral float-right" title="UWB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Laird Connectivity.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+*******
+General
+*******
+
+.. automodule:: canvas
+    :members:

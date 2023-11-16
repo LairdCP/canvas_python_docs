@@ -1,0 +1,10 @@
+***
+UWB
+***
+
+The modules described in this chapter provide the interface to the
+UWB stack in the radio module.
+
+.. automodule:: canvas_uwb
+    :members:
+
