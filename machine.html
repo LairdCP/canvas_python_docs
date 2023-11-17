@@ -47,6 +47,13 @@
 <li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Machine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#machine.I2C"><code class="docutils literal notranslate"><span class="pre">I2C</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#machine.I2C.read"><code class="docutils literal notranslate"><span class="pre">I2C.read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.I2C.set_address"><code class="docutils literal notranslate"><span class="pre">I2C.set_address()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.I2C.write"><code class="docutils literal notranslate"><span class="pre">I2C.write()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.I2C.write_read"><code class="docutils literal notranslate"><span class="pre">I2C.write_read()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#machine.Pin"><code class="docutils literal notranslate"><span class="pre">Pin</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.configure_event"><code class="docutils literal notranslate"><span class="pre">Pin.configure_event()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.high"><code class="docutils literal notranslate"><span class="pre">Pin.high()</span></code></a></li>
@@ -68,6 +75,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.PULL_DOWN"><code class="docutils literal notranslate"><span class="pre">Pin.PULL_DOWN</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.PULL_NONE"><code class="docutils literal notranslate"><span class="pre">Pin.PULL_NONE</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.PULL_UP"><code class="docutils literal notranslate"><span class="pre">Pin.PULL_UP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#machine.SPI"><code class="docutils literal notranslate"><span class="pre">SPI</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#machine.SPI.configure"><code class="docutils literal notranslate"><span class="pre">SPI.configure()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.SPI.transceive"><code class="docutils literal notranslate"><span class="pre">SPI.transceive()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.SPI.CS_ACTIVE_HIGH"><code class="docutils literal notranslate"><span class="pre">SPI.CS_ACTIVE_HIGH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.SPI.CS_ACTIVE_LOW"><code class="docutils literal notranslate"><span class="pre">SPI.CS_ACTIVE_LOW</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.SPI.LSB"><code class="docutils literal notranslate"><span class="pre">SPI.LSB</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.SPI.MSB"><code class="docutils literal notranslate"><span class="pre">SPI.MSB</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -103,6 +119,72 @@
 <p>The modules described in this chapter provide the interface to the
 hardware interfaces in the machine module.</p>
 <dl class="py class" id="module-machine">
+<dt class="sig sig-object py" id="machine.I2C">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">I2C</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C" title="Link to this definition"></a></dt>
+<dd><p>An I2C (Inter-Integrated Circuit) object is used to interact with the
+I2C peripheral. The two-wire interface can can be used to communicate with
+multiple devices on the same bus.
+Device addresses may be specific to the device, selectable by
+input pins, or programmable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> – [str] Device identifier</p></li>
+<li><p><strong>device</strong> – [3-tuple] (Device identifier, SDA pin name, SCL pin name)</p></li>
+<li><p><strong>address</strong> – Device address</p></li>
+</ul>
+</dd>
+</dl>
+<p>Zephyr example: I2C(“i2c&#64;40003000”, 0x40)</p>
+<p>Silicon Labs (Lyra) example: I2C((“I2C0”, “PD03”, “PD02”), 0x40)</p>
+<p>0x40 is the 7-bit address of the TI HDC1010 (<a class="reference external" href="https://download.mikroe.com/documents/datasheets/hdc1010.pdf">https://download.mikroe.com/documents/datasheets/hdc1010.pdf</a>)
+that is part of the temperature and humidity click board (<a class="reference external" href="https://www.mikroe.com/temp-hum-4-click">https://www.mikroe.com/temp-hum-4-click</a>)
+that can be populated in the mikroBUS socket.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2C.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#machine.I2C.read" title="Link to this definition"></a></dt>
+<dd><p>Read from I2C device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>length</strong> – Number of bytes to read</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2C.set_address">
+<span class="sig-name descname"><span class="pre">set_address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.set_address" title="Link to this definition"></a></dt>
+<dd><p>Set device address.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2C.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#machine.I2C.write" title="Link to this definition"></a></dt>
+<dd><p>Write to I2C device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – Buffer containing bytes to write</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2C.write_read">
+<span class="sig-name descname"><span class="pre">write_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#machine.I2C.write_read" title="Link to this definition"></a></dt>
+<dd><p>Write-then-read I2C device (repeated start).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Buffer containing bytes to write</p></li>
+<li><p><strong>length</strong> – Number of bytes to read</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="machine.Pin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">Pin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port_pin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pull</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PULL_NONE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin" title="Link to this definition"></a></dt>
 <dd><p>A pin object is used to control I/O pins (also known as GPIO -
@@ -113,8 +195,9 @@ OUT, etc) and methods to get and set the digital logic level.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>port_pin</strong> – The (“port”, pin#) or (gpio-dynamic label “GPIO3”)</p></li>
-<li><p><strong>mode</strong> – <a class="reference internal" href="#machine.Pin.NO_CONNECT" title="machine.Pin.NO_CONNECT"><code class="xref py py-data docutils literal notranslate"><span class="pre">NO_CONNECT</span></code></a>, <a class="reference internal" href="#machine.Pin.IN" title="machine.Pin.IN"><code class="xref py py-data docutils literal notranslate"><span class="pre">IN</span></code></a>, py:data:<cite>OUT</cite></p></li>
+<li><p><strong>port_pin</strong> – [2-tuple] (“port identifier”, pin#)</p></li>
+<li><p><strong>port_pin</strong> – [str] Zephyr gpio-dynamic label (e.g., “GPIO3”) or name from Lyra DAPI map</p></li>
+<li><p><strong>mode</strong> – <a class="reference internal" href="#machine.Pin.NO_CONNECT" title="machine.Pin.NO_CONNECT"><code class="xref py py-data docutils literal notranslate"><span class="pre">NO_CONNECT</span></code></a>, <a class="reference internal" href="#machine.Pin.IN" title="machine.Pin.IN"><code class="xref py py-data docutils literal notranslate"><span class="pre">IN</span></code></a>, <a class="reference internal" href="#machine.Pin.OUT" title="machine.Pin.OUT"><code class="xref py py-data docutils literal notranslate"><span class="pre">OUT</span></code></a></p></li>
 <li><p><strong>pull</strong> – Optional; <a class="reference internal" href="#machine.Pin.PULL_NONE" title="machine.Pin.PULL_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_NONE</span></code></a>, <a class="reference internal" href="#machine.Pin.PULL_UP" title="machine.Pin.PULL_UP"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_UP</span></code></a>,
 <a class="reference internal" href="#machine.Pin.PULL_DOWN" title="machine.Pin.PULL_DOWN"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_DOWN</span></code></a> (default <a class="reference internal" href="#machine.Pin.PULL_NONE" title="machine.Pin.PULL_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_NONE</span></code></a>)</p></li>
 </ul>
@@ -165,8 +248,9 @@ OUT, etc) and methods to get and set the digital logic level.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>port_pin</strong> – The (“port”, pin#) or (gpio-dynamic label “GPIO3”)</p></li>
-<li><p><strong>mode</strong> – <a class="reference internal" href="#machine.Pin.NO_CONNECT" title="machine.Pin.NO_CONNECT"><code class="xref py py-data docutils literal notranslate"><span class="pre">NO_CONNECT</span></code></a>, <a class="reference internal" href="#machine.Pin.IN" title="machine.Pin.IN"><code class="xref py py-data docutils literal notranslate"><span class="pre">IN</span></code></a>, py:data:<cite>OUT</cite></p></li>
+<li><p><strong>port_pin</strong> – [2-tuple] (“port identifier”, pin#)</p></li>
+<li><p><strong>port_pin</strong> – [str] Zephyr gpio-dynamic label (e.g., “GPIO3”) or name from Lyra DAPI map</p></li>
+<li><p><strong>mode</strong> – <a class="reference internal" href="#machine.Pin.NO_CONNECT" title="machine.Pin.NO_CONNECT"><code class="xref py py-data docutils literal notranslate"><span class="pre">NO_CONNECT</span></code></a>, <a class="reference internal" href="#machine.Pin.IN" title="machine.Pin.IN"><code class="xref py py-data docutils literal notranslate"><span class="pre">IN</span></code></a>, <a class="reference internal" href="#machine.Pin.OUT" title="machine.Pin.OUT"><code class="xref py py-data docutils literal notranslate"><span class="pre">OUT</span></code></a></p></li>
 <li><p><strong>pull</strong> – Optional; <a class="reference internal" href="#machine.Pin.PULL_NONE" title="machine.Pin.PULL_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_NONE</span></code></a>, <a class="reference internal" href="#machine.Pin.PULL_UP" title="machine.Pin.PULL_UP"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_UP</span></code></a>,
 <a class="reference internal" href="#machine.Pin.PULL_DOWN" title="machine.Pin.PULL_DOWN"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_DOWN</span></code></a> (default <a class="reference internal" href="#machine.Pin.PULL_NONE" title="machine.Pin.PULL_NONE"><code class="xref py py-data docutils literal notranslate"><span class="pre">PULL_NONE</span></code></a>)</p></li>
 </ul>
@@ -280,6 +364,91 @@ OUT, etc) and methods to get and set the digital logic level.</p>
 <dd><dl class="field-list simple">
 </dl>
 <p>Pin has a pull-up resistor enabled</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.SPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">SPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI" title="Link to this definition"></a></dt>
+<dd><p>This object is used to interact with the SPI peripheral. It is commonly used
+with 3 or 4 signals (clock, data out, data in, and chip select).
+The chip select can be controlled by the peripheral or by the application.
+When controlled by the application, multiple devices can exist on the same bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> – [str] Device identifier</p></li>
+<li><p><strong>device</strong> – [4-tuple] (Device identifier, clock pin name, data out pin name, data in pin name)</p></li>
+<li><p><strong>pin</strong> – [None] Optional chip select pin</p></li>
+<li><p><strong>pin</strong> – [object] <a class="reference internal" href="#machine.Pin" title="machine.Pin"><code class="xref py py-data docutils literal notranslate"><span class="pre">Pin</span></code></a></p></li>
+<li><p><strong>pin</strong> – [3-tuple] (Port, pin number, active state)</p></li>
+<li><p><strong>pin</strong> – [2-tuple] (Pin name, active state)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Zephyr example - SPI(“spi&#64;40023000”, Pin(“SPI_CS”, Pin.OUT, Pin.PULL_NONE)) or
+SPI(“spi&#64;40023000”, (“gpio&#64;50000000”, 20, SPI.CS_ACTIVE_LOW))</p>
+<p>Silicon Labs (Lyra) example - SPI((“USART0”, “PC02”, “PC04”, “PC05”), (“PC03”, SPI.CS_ACTIVE_LOW))</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SPI.configure">
+<span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polarity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_bit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.configure" title="Link to this definition"></a></dt>
+<dd><p>Change configuration from default (1M, 0, 0, MSB).</p>
+<p>The underlying Silicon Labs (Lyra) driver can only support a single
+configuration for hardware peripheral.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rate</strong> – SCK rate in Hz</p></li>
+<li><p><strong>polarity</strong> – Clock polarity (0 or 1)</p></li>
+<li><p><strong>phase</strong> – Clock phase (0 or 1)</p></li>
+<li><p><strong>first_bit</strong> – Bit to send first. <a class="reference internal" href="#machine.SPI.MSB" title="machine.SPI.MSB"><code class="xref py py-data docutils literal notranslate"><span class="pre">MSB</span></code></a> or <a class="reference internal" href="#machine.SPI.LSB" title="machine.SPI.LSB"><code class="xref py py-data docutils literal notranslate"><span class="pre">LSB</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SPI.transceive">
+<span class="sig-name descname"><span class="pre">transceive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#machine.SPI.transceive" title="Link to this definition"></a></dt>
+<dd><p>Write data to device and return equal sized buffer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – Bytes to write</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.SPI.CS_ACTIVE_HIGH">
+<span class="sig-name descname"><span class="pre">CS_ACTIVE_HIGH</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.SPI.CS_ACTIVE_HIGH" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Configure the SPI bus to use an active high (‘1’) chip select</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.SPI.CS_ACTIVE_LOW">
+<span class="sig-name descname"><span class="pre">CS_ACTIVE_LOW</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.SPI.CS_ACTIVE_LOW" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Configure the SPI bus to use an active low (‘0’) chip select</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.SPI.LSB">
+<span class="sig-name descname"><span class="pre">LSB</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.SPI.LSB" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Configure the SPI bus to send the least significant byte first</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.SPI.MSB">
+<span class="sig-name descname"><span class="pre">MSB</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.SPI.MSB" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Configure the SPI bus to send the most significant byte first</p>
 </dd></dl>
 
 </dd></dl>

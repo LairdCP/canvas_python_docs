@@ -197,12 +197,12 @@
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_DEVICE_TYPE">CONFIG_DEVICE_TYPE (in module canvas_uwb)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_LOCAL_ADDRESS">CONFIG_LOCAL_ADDRESS (in module canvas_uwb)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_MAC_ADDRESS_MODE">CONFIG_MAC_ADDRESS_MODE (in module canvas_uwb)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_MAX_RR_RETRY">CONFIG_MAX_RR_RETRY (in module canvas_uwb)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_MULTI_NODE_MODE">CONFIG_MULTI_NODE_MODE (in module canvas_uwb)</a>
@@ -227,11 +227,17 @@
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_TX_POWER">CONFIG_TX_POWER (in module canvas_uwb)</a>
 </li>
+      <li><a href="machine.html#machine.SPI.configure">configure() (machine.SPI method)</a>
+</li>
       <li><a href="machine.html#machine.Pin.configure_event">configure_event() (machine.Pin method)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.connect">connect() (in module canvas_ble)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.Connection">Connection (class in canvas_ble)</a>
+</li>
+      <li><a href="machine.html#machine.SPI.CS_ACTIVE_HIGH">CS_ACTIVE_HIGH (machine.SPI attribute)</a>
+</li>
+      <li><a href="machine.html#machine.SPI.CS_ACTIVE_LOW">CS_ACTIVE_LOW (machine.SPI attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -349,6 +355,8 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="machine.html#machine.I2C">I2C (class in machine)</a>
+</li>
       <li><a href="machine.html#machine.Pin.IN">IN (machine.Pin attribute)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.indicate">indicate() (canvas_ble.GattServer method)</a>
@@ -365,10 +373,10 @@
         <li><a href="canvas_uwb.html#canvas_uwb.UwbSessionState.is_active">(canvas_uwb.UwbSessionState method)</a>
 </li>
       </ul></li>
-      <li><a href="canvas_uwb.html#canvas_uwb.UwbSessionState.is_deinit">is_deinit() (canvas_uwb.UwbSessionState method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="canvas_uwb.html#canvas_uwb.UwbSessionState.is_deinit">is_deinit() (canvas_uwb.UwbSessionState method)</a>
+</li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbDeviceState.is_error">is_error() (canvas_uwb.UwbDeviceState method)</a>
 
       <ul>
@@ -392,6 +400,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="machine.html#machine.Pin.low">low() (machine.Pin method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="machine.html#machine.SPI.LSB">LSB (machine.SPI attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -425,6 +437,8 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="machine.html#machine.SPI.MSB">MSB (machine.SPI attribute)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.my_addr">my_addr() (in module canvas_ble)</a>
 </li>
   </ul></td>
@@ -498,6 +512,8 @@
       <ul>
         <li><a href="canvas_ble.html#canvas_ble.GattServer.read">(canvas_ble.GattServer method)</a>
 </li>
+        <li><a href="machine.html#machine.I2C.read">(machine.I2C method)</a>
+</li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -516,6 +532,8 @@
       <li><a href="canvas_ble.html#canvas_ble.Scanner">Scanner (class in canvas_ble)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.session_new">session_new() (in module canvas_uwb)</a>
+</li>
+      <li><a href="machine.html#machine.I2C.set_address">set_address() (machine.I2C method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.set_app_config">set_app_config() (canvas_uwb.UwbSession method)</a>
 </li>
@@ -555,6 +573,8 @@
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.shutdown">shutdown() (in module canvas_uwb)</a>
 </li>
+      <li><a href="machine.html#machine.SPI">SPI (class in machine)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.Advertiser.start">start() (canvas_ble.Advertiser method)</a>
 
       <ul>
@@ -589,12 +609,14 @@
 </li>
       <li><a href="machine.html#machine.Pin.toggle">toggle() (machine.Pin method)</a>
 </li>
-      <li><a href="canvas_ble.html#canvas_ble.Scanner.TYPE_CONNECTABLE">TYPE_CONNECTABLE (canvas_ble.Scanner attribute)</a>
+      <li><a href="machine.html#machine.SPI.transceive">transceive() (machine.SPI method)</a>
 </li>
-      <li><a href="canvas_ble.html#canvas_ble.Scanner.TYPE_DIRECTED">TYPE_DIRECTED (canvas_ble.Scanner attribute)</a>
+      <li><a href="canvas_ble.html#canvas_ble.Scanner.TYPE_CONNECTABLE">TYPE_CONNECTABLE (canvas_ble.Scanner attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="canvas_ble.html#canvas_ble.Scanner.TYPE_DIRECTED">TYPE_DIRECTED (canvas_ble.Scanner attribute)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.Scanner.TYPE_EXTENDED">TYPE_EXTENDED (canvas_ble.Scanner attribute)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.Scanner.TYPE_LEGACY">TYPE_LEGACY (canvas_ble.Scanner attribute)</a>
@@ -644,7 +666,13 @@
       <ul>
         <li><a href="canvas_ble.html#canvas_ble.GattServer.write">(canvas_ble.GattServer method)</a>
 </li>
+        <li><a href="machine.html#machine.I2C.write">(machine.I2C method)</a>
+</li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="machine.html#machine.I2C.write_read">write_read() (machine.I2C method)</a>
+</li>
   </ul></td>
 </tr></table>
 
