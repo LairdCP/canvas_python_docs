@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Machine &mdash; Canvas  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -45,6 +47,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="canvas.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Machine</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#machine.I2C"><code class="docutils literal notranslate"><span class="pre">I2C</span></code></a><ul>
@@ -75,6 +78,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.PULL_DOWN"><code class="docutils literal notranslate"><span class="pre">Pin.PULL_DOWN</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.PULL_NONE"><code class="docutils literal notranslate"><span class="pre">Pin.PULL_NONE</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.PULL_UP"><code class="docutils literal notranslate"><span class="pre">Pin.PULL_UP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#machine.RTC"><code class="docutils literal notranslate"><span class="pre">RTC</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#machine.RTC.datetime"><code class="docutils literal notranslate"><span class="pre">RTC.datetime()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#machine.SPI"><code class="docutils literal notranslate"><span class="pre">SPI</span></code></a><ul>
@@ -364,6 +371,34 @@ OUT, etc) and methods to get and set the digital logic level.</p>
 <dd><dl class="field-list simple">
 </dl>
 <p>Pin has a pull-up resistor enabled</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.RTC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">RTC</span></span><a class="headerlink" href="#machine.RTC" title="Link to this definition"></a></dt>
+<dd><p>This object is used to interface with the real time clock peripheral.
+The real time clock is used to keep track of the current date and time.
+This class is a singleton, only one RTC can be instantiated at a time.
+Attempting to instantiate a second RTC will return the existing instance.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.RTC.datetime">
+<span class="sig-name descname"><span class="pre">datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#machine.RTC.datetime" title="Link to this definition"></a></dt>
+<dd><p>Get or set the date and time of the RTC.</p>
+<p>With no arguments, this method returns an 8-tuple with the current
+date and time. With one argument (being an 8-tuple), it sets the
+date and time.</p>
+<p>The 8-tuple has the following format:</p>
+<p>(year, month, day, weekday, hours, minutes, seconds, milliseconds)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tuple</strong> – Optional 8-tuple of date and time</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>8-tuple of date and time</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

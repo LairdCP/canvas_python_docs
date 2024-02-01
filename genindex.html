@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Index &mdash; Canvas  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -43,6 +45,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="canvas.html">General</a></li>
 <li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine.html">Machine</a></li>
 </ul>
@@ -169,6 +172,13 @@
 </li>
       </ul></li>
       <li>
+    canvas_net
+
+      <ul>
+        <li><a href="canvas_net.html#module-canvas_net">module</a>
+</li>
+      </ul></li>
+      <li>
     canvas_uwb
 
       <ul>
@@ -182,6 +192,8 @@
       <li><a href="canvas_ble.html#canvas_ble.GattClient.CCCD_STATE_INDICATE">CCCD_STATE_INDICATE (canvas_ble.GattClient attribute)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattClient.CCCD_STATE_NOTIFY">CCCD_STATE_NOTIFY (canvas_ble.GattClient attribute)</a>
+</li>
+      <li><a href="canvas.html#canvas.Timer.change_period">change_period() (canvas.Timer method)</a>
 </li>
       <li><a href="canvas.html#canvas.NFCTag.clear">clear() (canvas.NFCTag method)</a>
 </li>
@@ -199,10 +211,10 @@
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_LOCAL_ADDRESS">CONFIG_LOCAL_ADDRESS (in module canvas_uwb)</a>
 </li>
-      <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_MAC_ADDRESS_MODE">CONFIG_MAC_ADDRESS_MODE (in module canvas_uwb)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_MAC_ADDRESS_MODE">CONFIG_MAC_ADDRESS_MODE (in module canvas_uwb)</a>
+</li>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_MAX_RR_RETRY">CONFIG_MAX_RR_RETRY (in module canvas_uwb)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_MULTI_NODE_MODE">CONFIG_MULTI_NODE_MODE (in module canvas_uwb)</a>
@@ -231,9 +243,13 @@
 </li>
       <li><a href="machine.html#machine.Pin.configure_event">configure_event() (machine.Pin method)</a>
 </li>
+      <li><a href="canvas_ble.html#canvas_ble.GattClient.configure_subscription">configure_subscription() (canvas_ble.GattClient method)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.connect">connect() (in module canvas_ble)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.Connection">Connection (class in canvas_ble)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.create">create() (canvas_net.Lwm2m method)</a>
 </li>
       <li><a href="machine.html#machine.SPI.CS_ACTIVE_HIGH">CS_ACTIVE_HIGH (machine.SPI attribute)</a>
 </li>
@@ -245,6 +261,8 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="machine.html#machine.RTC.datetime">datetime() (machine.RTC method)</a>
+</li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.del_multicast">del_multicast() (canvas_uwb.UwbSession method)</a>
 </li>
   </ul></td>
@@ -261,7 +279,41 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="canvas_ble.html#canvas_ble.GattClient.enable">enable() (canvas_ble.GattClient method)</a>
 </li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_BOOTSTRAP_REG_COMPLETE">EV_RD_BOOTSTRAP_REG_COMPLETE (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_BOOTSTRAP_REG_FAILURE">EV_RD_BOOTSTRAP_REG_FAILURE (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_BOOTSTRAP_TRANSFER_COMPLETE">EV_RD_BOOTSTRAP_TRANSFER_COMPLETE (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_DEREGISTER">EV_RD_DEREGISTER (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_DEREGISTER_FAILURE">EV_RD_DEREGISTER_FAILURE (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_DISCONNECT">EV_RD_DISCONNECT (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_ENGINE_SUSPENDED">EV_RD_ENGINE_SUSPENDED (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_NETWORK_ERROR">EV_RD_NETWORK_ERROR (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_QUEUE_MODE_RX_OFF">EV_RD_QUEUE_MODE_RX_OFF (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_REG_TIMEOUT">EV_RD_REG_TIMEOUT (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_REG_UPDATE">EV_RD_REG_UPDATE (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_REG_UPDATE_COMPLETE">EV_RD_REG_UPDATE_COMPLETE (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_REGISTRATION_COMPLETE">EV_RD_REGISTRATION_COMPLETE (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.EV_RD_REGISTRATION_FAILURE">EV_RD_REGISTRATION_FAILURE (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_ACTIVE_BANDS">EVENT_ACTIVE_BANDS (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_APN_UPDATE">EVENT_APN_UPDATE (canvas_net.Modem attribute)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_ATTR_VALUE">EVENT_ATTR_VALUE (canvas_ble.GattServer attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_BANDS">EVENT_BANDS (canvas_net.Modem attribute)</a>
 </li>
       <li><a href="machine.html#machine.Pin.EVENT_BOTH">EVENT_BOTH (machine.Pin attribute)</a>
 </li>
@@ -269,21 +321,53 @@
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_CCCD_INDICATE">EVENT_CCCD_INDICATE (canvas_ble.GattServer attribute)</a>
 </li>
-      <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_CCCD_NONE">EVENT_CCCD_NONE (canvas_ble.GattServer attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_CCCD_NONE">EVENT_CCCD_NONE (canvas_ble.GattServer attribute)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_CCCD_NOTIFY">EVENT_CCCD_NOTIFY (canvas_ble.GattServer attribute)</a>
 </li>
       <li><a href="machine.html#machine.Pin.EVENT_FALLING">EVENT_FALLING (machine.Pin attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_FOTA_COUNT">EVENT_FOTA_COUNT (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_FOTA_STATE">EVENT_FOTA_STATE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_GPS">EVENT_GPS (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_GPS_POSITION_STATUS">EVENT_GPS_POSITION_STATUS (canvas_net.Modem attribute)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_INDICATION_OK">EVENT_INDICATION_OK (canvas_ble.GattServer attribute)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_INDICATION_TIMEOUT">EVENT_INDICATION_TIMEOUT (canvas_ble.GattServer attribute)</a>
 </li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_NETWORK_STATE">EVENT_NETWORK_STATE (canvas_net.Modem attribute)</a>
+</li>
       <li><a href="machine.html#machine.Pin.EVENT_NONE">EVENT_NONE (machine.Pin attribute)</a>
 </li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_POLTE">EVENT_POLTE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_POLTE_LOCATE_STATUS">EVENT_POLTE_LOCATE_STATUS (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_POLTE_REGISTRATION">EVENT_POLTE_REGISTRATION (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_RAT">EVENT_RAT (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_REVISION">EVENT_REVISION (canvas_net.Modem attribute)</a>
+</li>
       <li><a href="machine.html#machine.Pin.EVENT_RISING">EVENT_RISING (machine.Pin attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_RSSI">EVENT_RSSI (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_SINR">EVENT_SINR (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_SITE_SURVEY">EVENT_SITE_SURVEY (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_SLEEP_STATE">EVENT_SLEEP_STATE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_STARTUP_STATE">EVENT_STARTUP_STATE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.EVENT_STATE">EVENT_STATE (canvas_net.Modem attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -323,19 +407,33 @@
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.get_app_config">get_app_config() (canvas_uwb.UwbSession method)</a>
 </li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.get_bytes">get_bytes() (canvas_net.Lwm2m method)</a>
+</li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbStackCapabilities.get_channel_mask">get_channel_mask() (canvas_uwb.UwbStackCapabilities method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.get_device_state">get_device_state() (in module canvas_uwb)</a>
 </li>
+      <li><a href="canvas_ble.html#canvas_ble.GattClient.get_dict">get_dict() (canvas_ble.GattClient method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.get_firmware_version">get_firmware_version() (canvas_net.Modem method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="canvas_ble.html#canvas_ble.GattClient.get_dict">get_dict() (canvas_ble.GattClient method)</a>
+      <li><a href="canvas_net.html#canvas_net.Modem.get_iccid">get_iccid() (canvas_net.Modem method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.get_imei">get_imei() (canvas_net.Modem method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.get_imsi">get_imsi() (canvas_net.Modem method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.get_int">get_int() (canvas_net.Lwm2m method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbStackCapabilities.get_max_multicast">get_max_multicast() (canvas_uwb.UwbStackCapabilities method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbStackCapabilities.get_max_sessions">get_max_sessions() (canvas_uwb.UwbStackCapabilities method)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.Connection.get_rssi">get_rssi() (canvas_ble.Connection method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.get_serial_number">get_serial_number() (canvas_net.Modem method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.get_session_state">get_session_state() (canvas_uwb.UwbSession method)</a>
 </li>
@@ -405,6 +503,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="machine.html#machine.SPI.LSB">LSB (machine.SPI attribute)</a>
 </li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m">Lwm2m (class in canvas_net)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -422,6 +522,8 @@
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.MODE_UNICAST">MODE_UNICAST (in module canvas_uwb)</a>
 </li>
+      <li><a href="canvas_net.html#canvas_net.Modem">Modem (class in canvas_net)</a>
+</li>
       <li>
     module
 
@@ -429,6 +531,8 @@
         <li><a href="canvas.html#module-canvas">canvas</a>
 </li>
         <li><a href="canvas_ble.html#module-canvas_ble">canvas_ble</a>
+</li>
+        <li><a href="canvas_net.html#module-canvas_net">canvas_net</a>
 </li>
         <li><a href="canvas_uwb.html#module-canvas_uwb">canvas_uwb</a>
 </li>
@@ -461,12 +565,18 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.OBJ_DEVICE">OBJ_DEVICE (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.OBJ_SECURITY">OBJ_SECURITY (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.OBJ_SERVER">OBJ_SERVER (canvas_net.Lwm2m attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="machine.html#machine.Pin.off">off() (machine.Pin method)</a>
 </li>
       <li><a href="machine.html#machine.Pin.on">on() (machine.Pin method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="machine.html#machine.Pin.OPEN_DRAIN">OPEN_DRAIN (machine.Pin attribute)</a>
 </li>
       <li><a href="machine.html#machine.Pin.OUT">OUT (machine.Pin attribute)</a>
@@ -485,11 +595,13 @@
 </li>
       <li><a href="canvas_ble.html#canvas_ble.PHY_500K">PHY_500K (in module canvas_ble)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="canvas_ble.html#canvas_ble.PHY_CODED">PHY_CODED (in module canvas_ble)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="machine.html#machine.Pin">Pin (class in machine)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.power_off">power_off() (canvas_net.Modem method)</a>
 </li>
       <li><a href="machine.html#machine.Pin.PULL_DOWN">PULL_DOWN (machine.Pin attribute)</a>
 </li>
@@ -519,9 +631,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="machine.html#machine.Pin.reconfigure">reconfigure() (machine.Pin method)</a>
 </li>
+      <li><a href="canvas_net.html#canvas_net.Modem.reset">reset() (canvas_net.Modem method)</a>
+</li>
+      <li><a href="canvas.html#canvas.Timer.restart">restart() (canvas.Timer method)</a>
+</li>
       <li><a href="canvas_uwb.html#canvas_uwb.ROLE_INITIATOR">ROLE_INITIATOR (in module canvas_uwb)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.ROLE_RESPONDER">ROLE_RESPONDER (in module canvas_uwb)</a>
+</li>
+      <li><a href="machine.html#machine.RTC">RTC (class in machine)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -531,11 +649,27 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="canvas_ble.html#canvas_ble.Scanner">Scanner (class in canvas_ble)</a>
 </li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.SECURITY_CERT">SECURITY_CERT (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.SECURITY_CERT_EST">SECURITY_CERT_EST (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.SECURITY_NOSEC">SECURITY_NOSEC (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.SECURITY_PSK">SECURITY_PSK (canvas_net.Lwm2m attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.SECURITY_RAW_PK">SECURITY_RAW_PK (canvas_net.Lwm2m attribute)</a>
+</li>
       <li><a href="canvas_uwb.html#canvas_uwb.session_new">session_new() (in module canvas_uwb)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.set">set() (canvas_net.Lwm2m method)</a>
 </li>
       <li><a href="machine.html#machine.I2C.set_address">set_address() (machine.I2C method)</a>
 </li>
+      <li><a href="canvas_net.html#canvas_net.Modem.set_apn">set_apn() (canvas_net.Modem method)</a>
+</li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.set_app_config">set_app_config() (canvas_uwb.UwbSession method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.set_bands">set_bands() (canvas_net.Modem method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.set_callback">set_callback() (canvas_uwb.UwbSession method)</a>
 </li>
@@ -544,6 +678,10 @@
       <li><a href="canvas_ble.html#canvas_ble.Advertiser.set_channel_mask">set_channel_mask() (canvas_ble.Advertiser method)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.Advertiser.set_directed">set_directed() (canvas_ble.Advertiser method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.set_endpoint_name">set_endpoint_name() (canvas_net.Lwm2m method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Lwm2m.set_exec_handler">set_exec_handler() (canvas_net.Lwm2m method)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.Advertiser.set_interval">set_interval() (canvas_ble.Advertiser method)</a>
 </li>
@@ -561,11 +699,11 @@
         <li><a href="canvas_ble.html#canvas_ble.Scanner.set_phys">(canvas_ble.Scanner method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="canvas_ble.html#canvas_ble.Advertiser.set_properties">set_properties() (canvas_ble.Advertiser method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.set_ranging_interval">set_ranging_interval() (canvas_uwb.UwbSession method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.set_rat">set_rat() (canvas_net.Modem method)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.Scanner.set_timing">set_timing() (canvas_ble.Scanner method)</a>
 </li>
@@ -575,22 +713,94 @@
 </li>
       <li><a href="machine.html#machine.SPI">SPI (class in machine)</a>
 </li>
-      <li><a href="canvas_ble.html#canvas_ble.Advertiser.start">start() (canvas_ble.Advertiser method)</a>
+      <li><a href="canvas.html#canvas.Timer.start">start() (canvas.Timer method)</a>
 
       <ul>
+        <li><a href="canvas_ble.html#canvas_ble.Advertiser.start">(canvas_ble.Advertiser method)</a>
+</li>
         <li><a href="canvas_ble.html#canvas_ble.GattServer.start">(canvas_ble.GattServer method)</a>
 </li>
         <li><a href="canvas_ble.html#canvas_ble.Scanner.start">(canvas_ble.Scanner method)</a>
 </li>
+        <li><a href="canvas_net.html#canvas_net.Lwm2m.start">(canvas_net.Lwm2m method)</a>
+</li>
         <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.start">(canvas_uwb.UwbSession method)</a>
 </li>
       </ul></li>
-      <li><a href="canvas_ble.html#canvas_ble.Advertiser.stop">stop() (canvas_ble.Advertiser method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_FOTA_COMPLETE">STATE_FOTA_COMPLETE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_FOTA_FILE_ERROR">STATE_FOTA_FILE_ERROR (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_FOTA_IDLE">STATE_FOTA_IDLE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_FOTA_INSTALL">STATE_FOTA_INSTALL (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_FOTA_PAD">STATE_FOTA_PAD (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_FOTA_REBOOT_AND_RECONFIGURE">STATE_FOTA_REBOOT_AND_RECONFIGURE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_FOTA_SEND_EOT">STATE_FOTA_SEND_EOT (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_FOTA_START">STATE_FOTA_START (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_FOTA_WIP">STATE_FOTA_WIP (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_INITIALIZED">STATE_INITIALIZED (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_NETWORK_EMERGENCY">STATE_NETWORK_EMERGENCY (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_NETWORK_HOME_NETWORK">STATE_NETWORK_HOME_NETWORK (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_NETWORK_NOT_REGISTERED">STATE_NETWORK_NOT_REGISTERED (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_NETWORK_OUT_OF_COVERAGE">STATE_NETWORK_OUT_OF_COVERAGE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_NETWORK_REGISTRATION_DENIED">STATE_NETWORK_REGISTRATION_DENIED (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_NETWORK_ROAMING">STATE_NETWORK_ROAMING (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_NETWORK_SEARCHING">STATE_NETWORK_SEARCHING (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_NETWORK_UNABLE_TO_CONFIGURE">STATE_NETWORK_UNABLE_TO_CONFIGURE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_NOT_READY">STATE_NOT_READY (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_SLEEP_AWAKE">STATE_SLEEP_AWAKE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_SLEEP_HIBERNATE">STATE_SLEEP_HIBERNATE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_SLEEP_LITE_HIBERNATE">STATE_SLEEP_LITE_HIBERNATE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_SLEEP_SLEEP">STATE_SLEEP_SLEEP (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_SLEEP_UNINITIALIZED">STATE_SLEEP_UNINITIALIZED (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_STARTUP_INACTIVE_SIM">STATE_STARTUP_INACTIVE_SIM (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_STARTUP_READY">STATE_STARTUP_READY (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_STARTUP_SIM_NOT_PRESENT">STATE_STARTUP_SIM_NOT_PRESENT (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_STARTUP_SIMLOCK">STATE_STARTUP_SIMLOCK (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_STARTUP_UNKNOWN">STATE_STARTUP_UNKNOWN (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_STARTUP_UNRECOVERABLE_ERROR">STATE_STARTUP_UNRECOVERABLE_ERROR (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.STATE_STARTUP_WAITING_FOR_ACCESS_CODE">STATE_STARTUP_WAITING_FOR_ACCESS_CODE (canvas_net.Modem attribute)</a>
+</li>
+      <li><a href="canvas.html#canvas.Timer.stop">stop() (canvas.Timer method)</a>
 
       <ul>
+        <li><a href="canvas_ble.html#canvas_ble.Advertiser.stop">(canvas_ble.Advertiser method)</a>
+</li>
         <li><a href="canvas_ble.html#canvas_ble.GattServer.stop">(canvas_ble.GattServer method)</a>
 </li>
         <li><a href="canvas_ble.html#canvas_ble.Scanner.stop">(canvas_ble.Scanner method)</a>
+</li>
+        <li><a href="canvas_net.html#canvas_net.Lwm2m.stop">(canvas_net.Lwm2m method)</a>
 </li>
         <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.stop">(canvas_uwb.UwbSession method)</a>
 </li>
@@ -632,6 +842,8 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="canvas_ble.html#canvas_ble.Advertiser.update">update() (canvas_ble.Advertiser method)</a>
+</li>
+      <li><a href="canvas_net.html#canvas_net.Modem.update_firmware">update_firmware() (canvas_net.Modem method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbDeviceState">UwbDeviceState (class in canvas_uwb)</a>
 </li>

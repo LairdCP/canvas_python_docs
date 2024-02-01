@@ -7,6 +7,7 @@ Welcome to Canvas documentation!
 
    canvas.rst
    canvas_ble.rst
+   canvas_net.rst
    canvas_uwb.rst
    machine.rst
 

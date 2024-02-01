@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canvas Networking &mdash; Canvas  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UWB" href="canvas_uwb.html" />
+    <link rel="prev" title="BLE" href="canvas_ble.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Canvas
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="canvas.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Canvas Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_net.Lwm2m"><code class="docutils literal notranslate"><span class="pre">Lwm2m</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.create"><code class="docutils literal notranslate"><span class="pre">Lwm2m.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.get_bytes"><code class="docutils literal notranslate"><span class="pre">Lwm2m.get_bytes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.get_int"><code class="docutils literal notranslate"><span class="pre">Lwm2m.get_int()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.set"><code class="docutils literal notranslate"><span class="pre">Lwm2m.set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.set_endpoint_name"><code class="docutils literal notranslate"><span class="pre">Lwm2m.set_endpoint_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.set_exec_handler"><code class="docutils literal notranslate"><span class="pre">Lwm2m.set_exec_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.start"><code class="docutils literal notranslate"><span class="pre">Lwm2m.start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.stop"><code class="docutils literal notranslate"><span class="pre">Lwm2m.stop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_BOOTSTRAP_REG_COMPLETE"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_BOOTSTRAP_REG_COMPLETE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_BOOTSTRAP_REG_FAILURE"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_BOOTSTRAP_REG_FAILURE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_BOOTSTRAP_TRANSFER_COMPLETE"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_BOOTSTRAP_TRANSFER_COMPLETE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_DEREGISTER"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_DEREGISTER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_DEREGISTER_FAILURE"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_DEREGISTER_FAILURE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_DISCONNECT"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_DISCONNECT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_ENGINE_SUSPENDED"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_ENGINE_SUSPENDED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_NETWORK_ERROR"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_NETWORK_ERROR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_QUEUE_MODE_RX_OFF"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_QUEUE_MODE_RX_OFF</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_REGISTRATION_COMPLETE"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_REGISTRATION_COMPLETE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_REGISTRATION_FAILURE"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_REGISTRATION_FAILURE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_REG_TIMEOUT"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_REG_TIMEOUT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_REG_UPDATE"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_REG_UPDATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.EV_RD_REG_UPDATE_COMPLETE"><code class="docutils literal notranslate"><span class="pre">Lwm2m.EV_RD_REG_UPDATE_COMPLETE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.OBJ_DEVICE"><code class="docutils literal notranslate"><span class="pre">Lwm2m.OBJ_DEVICE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.OBJ_SECURITY"><code class="docutils literal notranslate"><span class="pre">Lwm2m.OBJ_SECURITY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.OBJ_SERVER"><code class="docutils literal notranslate"><span class="pre">Lwm2m.OBJ_SERVER</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.SECURITY_CERT"><code class="docutils literal notranslate"><span class="pre">Lwm2m.SECURITY_CERT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.SECURITY_CERT_EST"><code class="docutils literal notranslate"><span class="pre">Lwm2m.SECURITY_CERT_EST</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.SECURITY_NOSEC"><code class="docutils literal notranslate"><span class="pre">Lwm2m.SECURITY_NOSEC</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.SECURITY_PSK"><code class="docutils literal notranslate"><span class="pre">Lwm2m.SECURITY_PSK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Lwm2m.SECURITY_RAW_PK"><code class="docutils literal notranslate"><span class="pre">Lwm2m.SECURITY_RAW_PK</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_net.Modem"><code class="docutils literal notranslate"><span class="pre">Modem</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.get_firmware_version"><code class="docutils literal notranslate"><span class="pre">Modem.get_firmware_version()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.get_iccid"><code class="docutils literal notranslate"><span class="pre">Modem.get_iccid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.get_imei"><code class="docutils literal notranslate"><span class="pre">Modem.get_imei()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.get_imsi"><code class="docutils literal notranslate"><span class="pre">Modem.get_imsi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.get_serial_number"><code class="docutils literal notranslate"><span class="pre">Modem.get_serial_number()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.power_off"><code class="docutils literal notranslate"><span class="pre">Modem.power_off()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.reset"><code class="docutils literal notranslate"><span class="pre">Modem.reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.set_apn"><code class="docutils literal notranslate"><span class="pre">Modem.set_apn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.set_bands"><code class="docutils literal notranslate"><span class="pre">Modem.set_bands()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.set_rat"><code class="docutils literal notranslate"><span class="pre">Modem.set_rat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.update_firmware"><code class="docutils literal notranslate"><span class="pre">Modem.update_firmware()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_ACTIVE_BANDS"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_ACTIVE_BANDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_APN_UPDATE"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_APN_UPDATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_BANDS"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_BANDS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_FOTA_COUNT"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_FOTA_COUNT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_FOTA_STATE"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_FOTA_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_GPS"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_GPS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_GPS_POSITION_STATUS"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_GPS_POSITION_STATUS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_NETWORK_STATE"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_NETWORK_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_POLTE"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_POLTE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_POLTE_LOCATE_STATUS"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_POLTE_LOCATE_STATUS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_POLTE_REGISTRATION"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_POLTE_REGISTRATION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_RAT"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_RAT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_REVISION"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_REVISION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_RSSI"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_RSSI</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_SINR"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_SINR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_SITE_SURVEY"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_SITE_SURVEY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_SLEEP_STATE"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_SLEEP_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_STARTUP_STATE"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_STARTUP_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.EVENT_STATE"><code class="docutils literal notranslate"><span class="pre">Modem.EVENT_STATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_FOTA_COMPLETE"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_FOTA_COMPLETE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_FOTA_FILE_ERROR"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_FOTA_FILE_ERROR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_FOTA_IDLE"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_FOTA_IDLE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_FOTA_INSTALL"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_FOTA_INSTALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_FOTA_PAD"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_FOTA_PAD</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_FOTA_REBOOT_AND_RECONFIGURE"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_FOTA_REBOOT_AND_RECONFIGURE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_FOTA_SEND_EOT"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_FOTA_SEND_EOT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_FOTA_START"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_FOTA_START</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_FOTA_WIP"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_FOTA_WIP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_INITIALIZED"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_INITIALIZED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_NETWORK_EMERGENCY"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_NETWORK_EMERGENCY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_NETWORK_HOME_NETWORK"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_NETWORK_HOME_NETWORK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_NETWORK_NOT_REGISTERED"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_NETWORK_NOT_REGISTERED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_NETWORK_OUT_OF_COVERAGE"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_NETWORK_OUT_OF_COVERAGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_NETWORK_REGISTRATION_DENIED"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_NETWORK_REGISTRATION_DENIED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_NETWORK_ROAMING"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_NETWORK_ROAMING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_NETWORK_SEARCHING"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_NETWORK_SEARCHING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_NETWORK_UNABLE_TO_CONFIGURE"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_NETWORK_UNABLE_TO_CONFIGURE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_NOT_READY"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_NOT_READY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_SLEEP_AWAKE"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_SLEEP_AWAKE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_SLEEP_HIBERNATE"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_SLEEP_HIBERNATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_SLEEP_LITE_HIBERNATE"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_SLEEP_LITE_HIBERNATE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_SLEEP_SLEEP"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_SLEEP_SLEEP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_SLEEP_UNINITIALIZED"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_SLEEP_UNINITIALIZED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_STARTUP_INACTIVE_SIM"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_STARTUP_INACTIVE_SIM</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_STARTUP_READY"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_STARTUP_READY</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_STARTUP_SIMLOCK"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_STARTUP_SIMLOCK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_STARTUP_SIM_NOT_PRESENT"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_STARTUP_SIM_NOT_PRESENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_STARTUP_UNKNOWN"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_STARTUP_UNKNOWN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_STARTUP_UNRECOVERABLE_ERROR"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_STARTUP_UNRECOVERABLE_ERROR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_net.Modem.STATE_STARTUP_WAITING_FOR_ACCESS_CODE"><code class="docutils literal notranslate"><span class="pre">Modem.STATE_STARTUP_WAITING_FOR_ACCESS_CODE</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine.html">Machine</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Canvas</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Canvas Networking</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/canvas_net.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="canvas-networking">
+<h1>Canvas Networking<a class="headerlink" href="#canvas-networking" title="Link to this heading"></a></h1>
+<p>The modules described in this chapter provide the interface to the
+network stack in products with networking support (MG100, BL5340 DVK,
+etc.).</p>
+<p>The Canvas Software Suite products make use of standard MicroPython
+network modules wherever possible. The Zephyr-based products (MG100,
+Pinnacle 100, and BL5340 DVK) use the <a class="reference external" href="https://docs.micropython.org/en/latest/library/network.html">network</a>
+module with a class named <code class="docutils literal notranslate"><span class="pre">network.Zephyr</span></code>. An application can
+bring up the network interface and wait for it to become available
+using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nic</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">Zephyr</span><span class="p">()</span>
+<span class="n">nic</span><span class="o">.</span><span class="n">ifconfig</span><span class="p">(</span><span class="s2">&quot;dhcp&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">nic</span><span class="o">.</span><span class="n">isconnected</span><span class="p">()</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">250</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The Canvas Software Suite also implements the
+<a class="reference external" href="https://docs.micropython.org/en/latest/library/socket.html">socket</a> and
+<a class="reference external" href="https://docs.micropython.org/en/latest/library/ssl.html">ssl</a> modules
+for communication with remote hosts.</p>
+<p>Custom network modules supported by the Canvas Software Suite are
+documented below.</p>
+<dl class="py class" id="module-canvas_net">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas_net.</span></span><span class="sig-name descname"><span class="pre">Lwm2m</span></span><a class="headerlink" href="#canvas_net.Lwm2m" title="Link to this definition"></a></dt>
+<dd><p>The Lwm2m class provides an interface to the LWM2M client.  This class is
+a singleton, only one client can be instantiated at a time. Attempting to
+instantiate a second client will return the existing instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cb</strong> – Callback function to be called to report LWM2M RD client events to
+the application. The callback function takes a single integer parameter
+which is the LWM2M event that occurred (see the <cite>EV_LWM2M…</cite> constants).</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Lwm2m.create" title="Link to this definition"></a></dt>
+<dd><p>Create a LWM2M object instance, resource, or resource instance. The type
+to create is determined by the length of the resource tuple (2-tuple for
+object instance, 3-tuple for resource, 4-tuple for resource instance).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource</strong> – A tuple containing the object ID, instance ID, and
+optionally resource ID and resource instance of the item to create.</p></li>
+<li><p><strong>size</strong> – The size of the resource to create in bytes. This is only
+used for resources and resource instances.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.get_bytes">
+<span class="sig-name descname"><span class="pre">get_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#canvas_net.Lwm2m.get_bytes" title="Link to this definition"></a></dt>
+<dd><p>Get a LWM2M resource value as a bytes object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>resource</strong> – A 3- or 4-tuple containing the object ID, instance ID,
+resource ID, and optional resource instance ID of the resource to get.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the resource as bytes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.get_int">
+<span class="sig-name descname"><span class="pre">get_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#canvas_net.Lwm2m.get_int" title="Link to this definition"></a></dt>
+<dd><p>Get a LWM2M resource value as an integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>resource</strong> – A 3- or 4-tuple containing the object ID, instance ID,
+resource ID, and optional resource instance ID of the resource to get.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the resource as an integer.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Lwm2m.set" title="Link to this definition"></a></dt>
+<dd><p>Set a LWM2M resource value.</p>
+<p>If the provided value is an integer, the value of the resource is set
+to as an integer (either u8, u16, or u32 depending on the size of
+the resource). If the resource has a size that is not compatible with
+an integer, an exception is raised.</p>
+<p>If the provided value is a bytes object, the bytes are copied
+into the resource. An exception is raised if the size of the bytes
+object is larger than the size of the resource.</p>
+<p>If the provided value is a string, the characters are copied into
+the resource. An exception is raised if the size of the string is
+larger than the size of the resource.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource</strong> – A 3- or 4-tuple containing the object ID, instance ID, and
+resource ID, and optional resource instance of the resource to set.</p></li>
+<li><p><strong>value</strong> – The value to set the resource to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.set_endpoint_name">
+<span class="sig-name descname"><span class="pre">set_endpoint_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Lwm2m.set_endpoint_name" title="Link to this definition"></a></dt>
+<dd><p>Set the LWM2M endpoint name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – The endpoint name to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.set_exec_handler">
+<span class="sig-name descname"><span class="pre">set_exec_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Lwm2m.set_exec_handler" title="Link to this definition"></a></dt>
+<dd><p>Set a LWM2M resource execution handler.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource</strong> – A 3-tuple containing the object ID, instance ID, and
+resource ID of the resource to set the handler for.</p></li>
+<li><p><strong>handler</strong> – The handler to be called whenever the resource is
+executed by the server.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Lwm2m.start" title="Link to this definition"></a></dt>
+<dd><p>Start the LWM2M client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bootstrap</strong> – If True, bootstrap the LWM2M client. If False, do not
+bootstrap.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deregister</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Lwm2m.stop" title="Link to this definition"></a></dt>
+<dd><p>Stop the LWM2M client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deregister</strong> – If True, deregister from the LWM2M server. If False,
+do not deregister.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_BOOTSTRAP_REG_COMPLETE">
+<span class="sig-name descname"><span class="pre">EV_RD_BOOTSTRAP_REG_COMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_BOOTSTRAP_REG_COMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Bootstrap registration complete event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_BOOTSTRAP_REG_FAILURE">
+<span class="sig-name descname"><span class="pre">EV_RD_BOOTSTRAP_REG_FAILURE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_BOOTSTRAP_REG_FAILURE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Bootstrap registration failure event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_BOOTSTRAP_TRANSFER_COMPLETE">
+<span class="sig-name descname"><span class="pre">EV_RD_BOOTSTRAP_TRANSFER_COMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_BOOTSTRAP_TRANSFER_COMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Bootstrap transfer complete event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_DEREGISTER">
+<span class="sig-name descname"><span class="pre">EV_RD_DEREGISTER</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_DEREGISTER" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Deregistration event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_DEREGISTER_FAILURE">
+<span class="sig-name descname"><span class="pre">EV_RD_DEREGISTER_FAILURE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_DEREGISTER_FAILURE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Deregistration failure event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_DISCONNECT">
+<span class="sig-name descname"><span class="pre">EV_RD_DISCONNECT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_DISCONNECT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Client disconnected event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_ENGINE_SUSPENDED">
+<span class="sig-name descname"><span class="pre">EV_RD_ENGINE_SUSPENDED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_ENGINE_SUSPENDED" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Engine suspended event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_NETWORK_ERROR">
+<span class="sig-name descname"><span class="pre">EV_RD_NETWORK_ERROR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_NETWORK_ERROR" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Network error event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_QUEUE_MODE_RX_OFF">
+<span class="sig-name descname"><span class="pre">EV_RD_QUEUE_MODE_RX_OFF</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_QUEUE_MODE_RX_OFF" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Receive off event in queue mode.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_REGISTRATION_COMPLETE">
+<span class="sig-name descname"><span class="pre">EV_RD_REGISTRATION_COMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_REGISTRATION_COMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Registration complete event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_REGISTRATION_FAILURE">
+<span class="sig-name descname"><span class="pre">EV_RD_REGISTRATION_FAILURE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_REGISTRATION_FAILURE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Registration failure event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_REG_TIMEOUT">
+<span class="sig-name descname"><span class="pre">EV_RD_REG_TIMEOUT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_REG_TIMEOUT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Registration timeout event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_REG_UPDATE">
+<span class="sig-name descname"><span class="pre">EV_RD_REG_UPDATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_REG_UPDATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Registration update event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.EV_RD_REG_UPDATE_COMPLETE">
+<span class="sig-name descname"><span class="pre">EV_RD_REG_UPDATE_COMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.EV_RD_REG_UPDATE_COMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Registration update complete event.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.OBJ_DEVICE">
+<span class="sig-name descname"><span class="pre">OBJ_DEVICE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.OBJ_DEVICE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>LWM2M device object ID.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.OBJ_SECURITY">
+<span class="sig-name descname"><span class="pre">OBJ_SECURITY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.OBJ_SECURITY" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>LWM2M security object ID.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.OBJ_SERVER">
+<span class="sig-name descname"><span class="pre">OBJ_SERVER</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.OBJ_SERVER" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>LWM2M server object ID.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.SECURITY_CERT">
+<span class="sig-name descname"><span class="pre">SECURITY_CERT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.SECURITY_CERT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>LWM2M security mode: Certificate mode.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.SECURITY_CERT_EST">
+<span class="sig-name descname"><span class="pre">SECURITY_CERT_EST</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.SECURITY_CERT_EST" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>LWM2M security mode: Certificate mode with EST.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.SECURITY_NOSEC">
+<span class="sig-name descname"><span class="pre">SECURITY_NOSEC</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.SECURITY_NOSEC" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>LWM2M security mode: NoSec mode.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.SECURITY_PSK">
+<span class="sig-name descname"><span class="pre">SECURITY_PSK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.SECURITY_PSK" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>LWM2M security mode: Pre-Shared Key mode.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Lwm2m.SECURITY_RAW_PK">
+<span class="sig-name descname"><span class="pre">SECURITY_RAW_PK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Lwm2m.SECURITY_RAW_PK" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>LWM2M security mode: Raw Public Key mode.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="canvas_net.Modem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas_net.</span></span><span class="sig-name descname"><span class="pre">Modem</span></span><a class="headerlink" href="#canvas_net.Modem" title="Link to this definition"></a></dt>
+<dd><p>The Modem class provides an interface to a modem device.  This class is
+a singleton, only one client can be instantiated at a time. Attempting to
+instantiate a second modem will return the existing instance.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">modem_cb</span><span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">modem</span> <span class="o">=</span> <span class="n">canvas_net</span><span class="o">.</span><span class="n">Modem</span><span class="p">(</span><span class="n">modem_cb</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cb</strong> – Callback function to be called when a modem event is
+received. The callback function must accept a single argument, which will
+be a named tuple of the form (event, data, string).
+<cite>event</cite> is the event id.
+<cite>data</cite> is a byte string of data associated with the event. <cite>data</cite> can be None.
+<cite>string</cite> is a string value associated with the event. <cite>string</cite> can be None.
+The value None can be passed to disable the callback.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.get_firmware_version">
+<span class="sig-name descname"><span class="pre">get_firmware_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#canvas_net.Modem.get_firmware_version" title="Link to this definition"></a></dt>
+<dd><p>Get the firmware version of the modem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The firmware version.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.get_iccid">
+<span class="sig-name descname"><span class="pre">get_iccid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#canvas_net.Modem.get_iccid" title="Link to this definition"></a></dt>
+<dd><p>Get the ICCID of the modem SIM card.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The ICCID.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.get_imei">
+<span class="sig-name descname"><span class="pre">get_imei</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#canvas_net.Modem.get_imei" title="Link to this definition"></a></dt>
+<dd><p>Get the IMEI of the modem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The IMEI.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.get_imsi">
+<span class="sig-name descname"><span class="pre">get_imsi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#canvas_net.Modem.get_imsi" title="Link to this definition"></a></dt>
+<dd><p>Get the IMSI of the modem SIM card.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The IMSI.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.get_serial_number">
+<span class="sig-name descname"><span class="pre">get_serial_number</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#canvas_net.Modem.get_serial_number" title="Link to this definition"></a></dt>
+<dd><p>Get the serial number of the modem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The serial number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.power_off">
+<span class="sig-name descname"><span class="pre">power_off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Modem.power_off" title="Link to this definition"></a></dt>
+<dd><p>Power off the modem. To power the modem back on, call <a class="reference internal" href="#canvas_net.Modem.reset" title="canvas_net.Modem.reset"><code class="xref py py-func docutils literal notranslate"><span class="pre">reset()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Modem.reset" title="Link to this definition"></a></dt>
+<dd><p>Reset and reconfigure the modem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.set_apn">
+<span class="sig-name descname"><span class="pre">set_apn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">apn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Modem.set_apn" title="Link to this definition"></a></dt>
+<dd><p>Set the modem APN.
+The modem reboots after this command is issued.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>apn</strong> – The APN to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.set_bands">
+<span class="sig-name descname"><span class="pre">set_bands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bands</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Modem.set_bands" title="Link to this definition"></a></dt>
+<dd><p>Set the modem bands.
+The modem reboots after this command is issued.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bands</strong> – <p>The bands to set. This string is a band bit mask.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bit Mask</p></th>
+<th class="head"><p>Band</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>000000 00000000 00000000</p></td>
+<td><p>Not available</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 00000001</p></td>
+<td><p>LTE Band 1 (2000 MHz)</p></td>
+</tr>
+<tr class="row-even"><td><p>000000 00000000 00000002</p></td>
+<td><p>LTE Band 2 (1900 MHz)</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 00000004</p></td>
+<td><p>LTE Band 3 (1800 MHz)</p></td>
+</tr>
+<tr class="row-even"><td><p>000000 00000000 00000008</p></td>
+<td><p>LTE Band 4 (1700 MHz)</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 00000010</p></td>
+<td><p>LTE Band 5 (850 MHz)</p></td>
+</tr>
+<tr class="row-even"><td><p>000000 00000000 00000080</p></td>
+<td><p>LTE Band 8 (900MHz)   only for 453-00011 (External
+antenna)</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 00000100</p></td>
+<td><p>LTE Band 9 (1900MHz)  NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-even"><td><p>000000 00000000 00000200</p></td>
+<td><p>LTE Band 10 (2100MHz) NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 00000800</p></td>
+<td><p>LTE Band 12 (700 MHz)</p></td>
+</tr>
+<tr class="row-even"><td><p>000000 00000000 00001000</p></td>
+<td><p>LTE Band 13 (700 MHz)</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 00010000</p></td>
+<td><p>LTE Band 17 (700 MHz)</p></td>
+</tr>
+<tr class="row-even"><td><p>000000 00000000 00020000</p></td>
+<td><p>LTE Band 18 (800MHz)  NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 00040000</p></td>
+<td><p>LTE Band 19 (800MHz)  NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-even"><td><p>000000 00000000 00080000</p></td>
+<td><p>LTE Band 20 (800MHz)</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 01000000</p></td>
+<td><p>LTE Band 25 (1900MHz) NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-even"><td><p>000000 00000000 02000000</p></td>
+<td><p>LTE Band 26 (800 MHz) NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 04000000</p></td>
+<td><p>LTE Band 27 (800 MHz) NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-even"><td><p>000000 00000000 08000000</p></td>
+<td><p>LTE Band 28 (700MHz)</p></td>
+</tr>
+<tr class="row-odd"><td><p>000000 00000000 40000000</p></td>
+<td><p>LTE Band 31 (450MHz)  NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-even"><td><p>000002 00000000 00000000</p></td>
+<td><p>LTE Band 66 (1800MHz) only for 453-00011 (External
+antenna)</p></td>
+</tr>
+<tr class="row-odd"><td><p>000080 00000000 00000000</p></td>
+<td><p>LTE Band 72 (450MHz)  NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-even"><td><p>000100 00000000 00000000</p></td>
+<td><p>LTE Band 73 (450MHz)  NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-odd"><td><p>100000 00000000 00000000</p></td>
+<td><p>LTE Band 85 (700MHz)  NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-even"><td><p>400000 00000000 00000000</p></td>
+<td><p>LTE Band 87 (410MHz)  NOT CERTIFIED</p></td>
+</tr>
+<tr class="row-odd"><td><p>800000 00000000 00000000</p></td>
+<td><p>LTE Band 88 (410MHz)  NOT CERTIFIED</p></td>
+</tr>
+</tbody>
+</table>
+<p>For example passing a value of “809189F” will set bands 1,2,3,4,5,8,12,13,17,20,28.
+Leading zeros are not required.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.set_rat">
+<span class="sig-name descname"><span class="pre">set_rat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Modem.set_rat" title="Link to this definition"></a></dt>
+<dd><p>Set the modem radio access technology (RAT).
+The modem reboots after this command is issued.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rat</strong> – The RAT to set. 0 = CAT-M1, 1 = CAT-NB1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_net.Modem.update_firmware">
+<span class="sig-name descname"><span class="pre">update_firmware</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_net.Modem.update_firmware" title="Link to this definition"></a></dt>
+<dd><p>Update the modem firmware.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>url</strong> – The file path of the firmware image in the file system.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_ACTIVE_BANDS">
+<span class="sig-name descname"><span class="pre">EVENT_ACTIVE_BANDS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_ACTIVE_BANDS" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_APN_UPDATE">
+<span class="sig-name descname"><span class="pre">EVENT_APN_UPDATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_APN_UPDATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_BANDS">
+<span class="sig-name descname"><span class="pre">EVENT_BANDS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_BANDS" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_FOTA_COUNT">
+<span class="sig-name descname"><span class="pre">EVENT_FOTA_COUNT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_FOTA_COUNT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_FOTA_STATE">
+<span class="sig-name descname"><span class="pre">EVENT_FOTA_STATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_FOTA_STATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_GPS">
+<span class="sig-name descname"><span class="pre">EVENT_GPS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_GPS" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_GPS_POSITION_STATUS">
+<span class="sig-name descname"><span class="pre">EVENT_GPS_POSITION_STATUS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_GPS_POSITION_STATUS" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_NETWORK_STATE">
+<span class="sig-name descname"><span class="pre">EVENT_NETWORK_STATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_NETWORK_STATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_POLTE">
+<span class="sig-name descname"><span class="pre">EVENT_POLTE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_POLTE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_POLTE_LOCATE_STATUS">
+<span class="sig-name descname"><span class="pre">EVENT_POLTE_LOCATE_STATUS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_POLTE_LOCATE_STATUS" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_POLTE_REGISTRATION">
+<span class="sig-name descname"><span class="pre">EVENT_POLTE_REGISTRATION</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_POLTE_REGISTRATION" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_RAT">
+<span class="sig-name descname"><span class="pre">EVENT_RAT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_RAT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_REVISION">
+<span class="sig-name descname"><span class="pre">EVENT_REVISION</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_REVISION" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_RSSI">
+<span class="sig-name descname"><span class="pre">EVENT_RSSI</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_RSSI" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_SINR">
+<span class="sig-name descname"><span class="pre">EVENT_SINR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_SINR" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_SITE_SURVEY">
+<span class="sig-name descname"><span class="pre">EVENT_SITE_SURVEY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_SITE_SURVEY" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_SLEEP_STATE">
+<span class="sig-name descname"><span class="pre">EVENT_SLEEP_STATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_SLEEP_STATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_STARTUP_STATE">
+<span class="sig-name descname"><span class="pre">EVENT_STARTUP_STATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_STARTUP_STATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.EVENT_STATE">
+<span class="sig-name descname"><span class="pre">EVENT_STATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.EVENT_STATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_FOTA_COMPLETE">
+<span class="sig-name descname"><span class="pre">STATE_FOTA_COMPLETE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_FOTA_COMPLETE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_FOTA_FILE_ERROR">
+<span class="sig-name descname"><span class="pre">STATE_FOTA_FILE_ERROR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_FOTA_FILE_ERROR" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_FOTA_IDLE">
+<span class="sig-name descname"><span class="pre">STATE_FOTA_IDLE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_FOTA_IDLE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_FOTA_INSTALL">
+<span class="sig-name descname"><span class="pre">STATE_FOTA_INSTALL</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_FOTA_INSTALL" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_FOTA_PAD">
+<span class="sig-name descname"><span class="pre">STATE_FOTA_PAD</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_FOTA_PAD" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_FOTA_REBOOT_AND_RECONFIGURE">
+<span class="sig-name descname"><span class="pre">STATE_FOTA_REBOOT_AND_RECONFIGURE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_FOTA_REBOOT_AND_RECONFIGURE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_FOTA_SEND_EOT">
+<span class="sig-name descname"><span class="pre">STATE_FOTA_SEND_EOT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_FOTA_SEND_EOT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_FOTA_START">
+<span class="sig-name descname"><span class="pre">STATE_FOTA_START</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_FOTA_START" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_FOTA_WIP">
+<span class="sig-name descname"><span class="pre">STATE_FOTA_WIP</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_FOTA_WIP" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_INITIALIZED">
+<span class="sig-name descname"><span class="pre">STATE_INITIALIZED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_INITIALIZED" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_NETWORK_EMERGENCY">
+<span class="sig-name descname"><span class="pre">STATE_NETWORK_EMERGENCY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_NETWORK_EMERGENCY" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_NETWORK_HOME_NETWORK">
+<span class="sig-name descname"><span class="pre">STATE_NETWORK_HOME_NETWORK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_NETWORK_HOME_NETWORK" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_NETWORK_NOT_REGISTERED">
+<span class="sig-name descname"><span class="pre">STATE_NETWORK_NOT_REGISTERED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_NETWORK_NOT_REGISTERED" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_NETWORK_OUT_OF_COVERAGE">
+<span class="sig-name descname"><span class="pre">STATE_NETWORK_OUT_OF_COVERAGE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_NETWORK_OUT_OF_COVERAGE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_NETWORK_REGISTRATION_DENIED">
+<span class="sig-name descname"><span class="pre">STATE_NETWORK_REGISTRATION_DENIED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_NETWORK_REGISTRATION_DENIED" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_NETWORK_ROAMING">
+<span class="sig-name descname"><span class="pre">STATE_NETWORK_ROAMING</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_NETWORK_ROAMING" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_NETWORK_SEARCHING">
+<span class="sig-name descname"><span class="pre">STATE_NETWORK_SEARCHING</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_NETWORK_SEARCHING" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_NETWORK_UNABLE_TO_CONFIGURE">
+<span class="sig-name descname"><span class="pre">STATE_NETWORK_UNABLE_TO_CONFIGURE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_NETWORK_UNABLE_TO_CONFIGURE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_NOT_READY">
+<span class="sig-name descname"><span class="pre">STATE_NOT_READY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_NOT_READY" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_SLEEP_AWAKE">
+<span class="sig-name descname"><span class="pre">STATE_SLEEP_AWAKE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_SLEEP_AWAKE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_SLEEP_HIBERNATE">
+<span class="sig-name descname"><span class="pre">STATE_SLEEP_HIBERNATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_SLEEP_HIBERNATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_SLEEP_LITE_HIBERNATE">
+<span class="sig-name descname"><span class="pre">STATE_SLEEP_LITE_HIBERNATE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_SLEEP_LITE_HIBERNATE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_SLEEP_SLEEP">
+<span class="sig-name descname"><span class="pre">STATE_SLEEP_SLEEP</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_SLEEP_SLEEP" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_SLEEP_UNINITIALIZED">
+<span class="sig-name descname"><span class="pre">STATE_SLEEP_UNINITIALIZED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_SLEEP_UNINITIALIZED" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_STARTUP_INACTIVE_SIM">
+<span class="sig-name descname"><span class="pre">STATE_STARTUP_INACTIVE_SIM</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_STARTUP_INACTIVE_SIM" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_STARTUP_READY">
+<span class="sig-name descname"><span class="pre">STATE_STARTUP_READY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_STARTUP_READY" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_STARTUP_SIMLOCK">
+<span class="sig-name descname"><span class="pre">STATE_STARTUP_SIMLOCK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_STARTUP_SIMLOCK" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_STARTUP_SIM_NOT_PRESENT">
+<span class="sig-name descname"><span class="pre">STATE_STARTUP_SIM_NOT_PRESENT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_STARTUP_SIM_NOT_PRESENT" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_STARTUP_UNKNOWN">
+<span class="sig-name descname"><span class="pre">STATE_STARTUP_UNKNOWN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_STARTUP_UNKNOWN" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_STARTUP_UNRECOVERABLE_ERROR">
+<span class="sig-name descname"><span class="pre">STATE_STARTUP_UNRECOVERABLE_ERROR</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_STARTUP_UNRECOVERABLE_ERROR" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas_net.Modem.STATE_STARTUP_WAITING_FOR_ACCESS_CODE">
+<span class="sig-name descname"><span class="pre">STATE_STARTUP_WAITING_FOR_ACCESS_CODE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_net.Modem.STATE_STARTUP_WAITING_FOR_ACCESS_CODE" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="canvas_ble.html" class="btn btn-neutral float-left" title="BLE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="canvas_uwb.html" class="btn btn-neutral float-right" title="UWB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Laird Connectivity.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

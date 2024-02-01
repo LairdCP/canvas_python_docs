@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLE &mdash; Canvas  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -19,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="UWB" href="canvas_uwb.html" />
+    <link rel="next" title="Canvas Networking" href="canvas_net.html" />
     <link rel="prev" title="General" href="canvas.html" /> 
 </head>
 
@@ -71,6 +73,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_ble.GattClient"><code class="docutils literal notranslate"><span class="pre">GattClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.configure_subscription"><code class="docutils literal notranslate"><span class="pre">GattClient.configure_subscription()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.discover"><code class="docutils literal notranslate"><span class="pre">GattClient.discover()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.enable"><code class="docutils literal notranslate"><span class="pre">GattClient.enable()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_ble.GattClient.get_dict"><code class="docutils literal notranslate"><span class="pre">GattClient.get_dict()</span></code></a></li>
@@ -145,6 +148,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#canvas_ble.PHY_CODED"><code class="docutils literal notranslate"><span class="pre">PHY_CODED</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine.html">Machine</a></li>
 </ul>
@@ -590,6 +594,12 @@ associated with the BLE connection to use for the GATT client.</p>
 </dd>
 </dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="canvas_ble.GattClient.configure_subscription">
+<span class="sig-name descname"><span class="pre">configure_subscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattClient.configure_subscription" title="Link to this definition"></a></dt>
+<dd><p>Map enable to a better name, but preserve compatibility.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="canvas_ble.GattClient.discover">
 <span class="sig-name descname"><span class="pre">discover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas_ble.GattClient.discover" title="Link to this definition"></a></dt>
 <dd><p>Before interaction with a remote GATT server, the GATT database
@@ -616,7 +626,7 @@ A CCCD enables or disables a notification or indication</p>
 <li><p><strong>uuid</strong> (<em>str</em>) – A string representation of an identifier
 present within the GATT database that is to be set.
 If this identifier is not present in the GATT database or is
-not for a CCCD an error will occurr.</p></li>
+not for a CCCD an error will occur.</p></li>
 <li><p><strong>enable</strong> (<em>int</em>) – <p>The value of this parameter should be
 set to:</p>
 <ul>
@@ -627,7 +637,8 @@ enable only notifications.</p></li>
 <li><p><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_INDICATE" title="canvas_ble.GattClient.CCCD_STATE_INDICATE"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattClient.CCCD_STATE_INDICATE</span></code></a> to
 enable only indications.</p></li>
 <li><p><a class="reference internal" href="#canvas_ble.GattClient.CCCD_STATE_BOTH" title="canvas_ble.GattClient.CCCD_STATE_BOTH"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_ble.GattClient.CCCD_STATE_BOTH</span></code></a> to
-enable both notifications and indications.</p></li>
+enable both notifications and indications. Server decides
+what type to send. Only one type can be sent at a time.</p></li>
 </ul>
 </p></li>
 </ul>
@@ -656,7 +667,7 @@ UUID.</p>
 <dd class="field-odd"><p><strong>identifier</strong> (<em>str</em>) – A string representation of an
 identifier present within the GATT database that is
 to be read. If this identifier is not present in the GATT
-database or is not of a readable type an error will occurr.</p>
+database or is not of a readable type an error will occur.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>bytes containing the data read.</p>
@@ -675,7 +686,7 @@ the following entries:</p>
 <dt>connection</dt><dd><p>The <a class="reference internal" href="#canvas_ble.Connection" title="canvas_ble.Connection"><code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></a> object for which the event was
 caused.</p>
 </dd>
-<dt>UUID</dt><dd><p>The UUID if the characteristic that this event is assocated
+<dt>UUID</dt><dd><p>The UUID if the characteristic that this event is associated
 with.</p>
 </dd>
 <dt>name</dt><dd><p>If a name has been set for the UUID, it is included.</p>
@@ -696,9 +707,9 @@ with.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>notify</strong> – A callback to be called when a
-notification is recieved from the connected server.</p></li>
+notification is received from the connected server.</p></li>
 <li><p><strong>indicate</strong> – A callback to be called when an
-indication is recieved from the connected server.</p></li>
+indication is received from the connected server.</p></li>
 </ul>
 </dd>
 </dl>
@@ -734,7 +745,7 @@ identifier.</p>
 <li><p><strong>identifier</strong> (<em>str</em>) – A string representation of a identifier
 present within the GATT database that is to be written.
 If this identifier is not present in the GATT database or is
-not of a writable type an error will occurr.</p></li>
+not of a writable type an error will occur.</p></li>
 <li><p><strong>data</strong> (<em>bytes</em>) – bytes containing the data to be written</p></li>
 </ul>
 </dd>
@@ -746,7 +757,8 @@ not of a writable type an error will occurr.</p></li>
 <span class="sig-name descname"><span class="pre">CCCD_STATE_BOTH</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_ble.GattClient.CCCD_STATE_BOTH" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 </dl>
-<p>Enable both notifications and indications</p>
+<p>Enable both notifications and indications. Server decides what type to send
+Only one type can be sent at a time.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -780,7 +792,7 @@ not of a writable type an error will occurr.</p></li>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas_ble.</span></span><span class="sig-name descname"><span class="pre">GattServer</span></span><a class="headerlink" href="#canvas_ble.GattServer" title="Link to this definition"></a></dt>
 <dd><p>The GattServer class allows creation and use of a GATT Server on the
 device.</p>
-<p>Only one instance of the GattServer class should ever be created.
+<p>Only one instance of the GattServer class can ever be created.
 Multiple GattServer instances are not supported at this time.</p>
 <p>“Read” and “Write” functionality are from the CLIENT perspective.
 e.g. A “Read”able characteristic will have data written to it by
@@ -869,10 +881,12 @@ individual item.</p>
 <dt>“Read”</dt><dd><p>The characteristic can be read by the connected client.</p>
 </dd>
 <dt>“Write”</dt><dd><p>The characteristic can be written to by the connected client.
-No acknowlegement is provided by the server.</p>
+No acknowledgement is provided by the server.
+(Write without response)</p>
 </dd>
 <dt>“WriteAck”</dt><dd><p>The characteristic can be written to by the connected client.
-The write will be acknowledged by the server.</p>
+The write will be acknowledged by the server.
+(Write with response)</p>
 </dd>
 <dt>“Notify”</dt><dd><p>The characteristic can be used to notify the connected client
 of a changed value. The notification is not acknowledged by
@@ -1602,7 +1616,7 @@ the BLE stack.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="canvas.html" class="btn btn-neutral float-left" title="General" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="canvas_uwb.html" class="btn btn-neutral float-right" title="UWB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="canvas_net.html" class="btn btn-neutral float-right" title="Canvas Networking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>General &mdash; Canvas  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -52,12 +54,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#canvas.NFCTag.sync_to_buffer"><code class="docutils literal notranslate"><span class="pre">NFCTag.sync_to_buffer()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#canvas.Timer"><code class="docutils literal notranslate"><span class="pre">Timer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas.Timer"><code class="docutils literal notranslate"><span class="pre">Timer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.Timer.change_period"><code class="docutils literal notranslate"><span class="pre">Timer.change_period()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.Timer.restart"><code class="docutils literal notranslate"><span class="pre">Timer.restart()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.Timer.start"><code class="docutils literal notranslate"><span class="pre">Timer.start()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.Timer.stop"><code class="docutils literal notranslate"><span class="pre">Timer.stop()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas.zcbor_from_obj"><code class="docutils literal notranslate"><span class="pre">zcbor_from_obj()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas.zcbor_to_obj"><code class="docutils literal notranslate"><span class="pre">zcbor_to_obj()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine.html">Machine</a></li>
 </ul>
@@ -150,9 +159,63 @@ The tag data buffer is always overwritten from the beginning.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="canvas.Timer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas.</span></span><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas.Timer" title="Link to this definition"></a></dt>
-<dd><p>Timer Class</p>
-<p>Allows a callback to be run after a given period and
-exposes associated functionality</p>
+<dd><p>Class for software timers. On expiration, the timer callback will be called
+with the data argument passed to the constructor. If the timer is repeating,
+it will continue to expire at the specified interval until stopped.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">timer_cb</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Timer expired&quot;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">timer</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">timer_cb</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">timer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interval_ms</strong> (<em>int</em>) – The timer interval in milliseconds</p></li>
+<li><p><strong>repeats</strong> (<em>bool</em>) – Whether the timer should repeat or not</p></li>
+<li><p><strong>cb</strong> – Callback function to be called when the timer expires. The callback
+function must accept a single argument, which will be the data argument
+passed to the constructor.</p></li>
+<li><p><strong>data</strong> – Data to be passed to the callback function when the timer expires</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas.Timer.change_period">
+<span class="sig-name descname"><span class="pre">change_period</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas.Timer.change_period" title="Link to this definition"></a></dt>
+<dd><p>Change the timer interval. If the timer is running, it will be restarted
+with the new interval. If the timer is stopped, the interval will be
+changed and the timer will start with the new interval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interval_ms</strong> – The new interval in milliseconds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas.Timer.restart">
+<span class="sig-name descname"><span class="pre">restart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas.Timer.restart" title="Link to this definition"></a></dt>
+<dd><p>Restart the timer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas.Timer.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas.Timer.start" title="Link to this definition"></a></dt>
+<dd><p>Start the timer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas.Timer.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#canvas.Timer.stop" title="Link to this definition"></a></dt>
+<dd><p>Stop the timer. The timer can be stopped even if it is already stopped.</p>
+<p>If the timer had expired, but the callback function had not yet been
+called before the timer was stopped, the callback function may still be
+called after the timer is stopped.</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py function">

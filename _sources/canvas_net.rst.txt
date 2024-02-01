@@ -1,0 +1,33 @@
+*****************
+Canvas Networking
+*****************
+
+The modules described in this chapter provide the interface to the
+network stack in products with networking support (MG100, BL5340 DVK,
+etc.).
+
+The Canvas Software Suite products make use of standard MicroPython
+network modules wherever possible. The Zephyr-based products (MG100,
+Pinnacle 100, and BL5340 DVK) use the `network <https://docs.micropython.org/en/latest/library/network.html>`_
+module with a class named ``network.Zephyr``. An application can
+bring up the network interface and wait for it to become available
+using:
+
+.. code-block:: python
+
+    nic = network.Zephyr()
+    nic.ifconfig("dhcp")
+    while nic.isconnected() == False:
+        time.sleep_ms(250)
+
+The Canvas Software Suite also implements the
+`socket <https://docs.micropython.org/en/latest/library/socket.html>`_ and
+`ssl <https://docs.micropython.org/en/latest/library/ssl.html>`_ modules
+for communication with remote hosts.
+
+Custom network modules supported by the Canvas Software Suite are
+documented below.
+
+.. automodule:: canvas_net
+    :members:
+
