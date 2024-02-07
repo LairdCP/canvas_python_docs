@@ -47,6 +47,21 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#canvas.LEDStrip"><code class="docutils literal notranslate"><span class="pre">LEDStrip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.set"><code class="docutils literal notranslate"><span class="pre">LEDStrip.set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.BLUE_MASK"><code class="docutils literal notranslate"><span class="pre">LEDStrip.BLUE_MASK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.COLOR_BLUE"><code class="docutils literal notranslate"><span class="pre">LEDStrip.COLOR_BLUE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.COLOR_CYAN"><code class="docutils literal notranslate"><span class="pre">LEDStrip.COLOR_CYAN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.COLOR_GREEN"><code class="docutils literal notranslate"><span class="pre">LEDStrip.COLOR_GREEN</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.COLOR_MAGENTA"><code class="docutils literal notranslate"><span class="pre">LEDStrip.COLOR_MAGENTA</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.COLOR_OFF"><code class="docutils literal notranslate"><span class="pre">LEDStrip.COLOR_OFF</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.COLOR_RED"><code class="docutils literal notranslate"><span class="pre">LEDStrip.COLOR_RED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.COLOR_WHITE"><code class="docutils literal notranslate"><span class="pre">LEDStrip.COLOR_WHITE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.COLOR_YELLOW"><code class="docutils literal notranslate"><span class="pre">LEDStrip.COLOR_YELLOW</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.GREEN_MASK"><code class="docutils literal notranslate"><span class="pre">LEDStrip.GREEN_MASK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas.LEDStrip.RED_MASK"><code class="docutils literal notranslate"><span class="pre">LEDStrip.RED_MASK</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas.NFCTag"><code class="docutils literal notranslate"><span class="pre">NFCTag</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#canvas.NFCTag.clear"><code class="docutils literal notranslate"><span class="pre">NFCTag.clear()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas.NFCTag.close"><code class="docutils literal notranslate"><span class="pre">NFCTag.close()</span></code></a></li>
@@ -97,6 +112,127 @@
              
   <section id="module-canvas">
 <span id="general"></span><h1>General<a class="headerlink" href="#module-canvas" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="canvas.LEDStrip">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas.</span></span><span class="sig-name descname"><span class="pre">LEDStrip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_leds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas.LEDStrip" title="Link to this definition"></a></dt>
+<dd><p>This class provides an interface to control an LED strip, including the
+onboard RGB LED on the Sera NX040 DVK board. The LED strip is controlled
+using the WS2812 protocol.</p>
+<p>The LED strip is initialized with the pin name and the number of LEDs in
+the strip. In this initial implementation, the pin is hardcoded to the
+onboard RGB LED pin on the Sera NX040 DVK board. The “output” from the
+onboard RGB LED is connected to the “input” of three-pin LED strip header
+to allow additional LEDs to be controlled.</p>
+<p>The LED strip is controlled by setting the color of each LED in the strip
+using the <a class="reference internal" href="#canvas.LEDStrip.set" title="canvas.LEDStrip.set"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set()</span></code></a> method. The color is specified as a 24-bit value
+with the red, green, and blue components packed into the value. The
+<a class="reference internal" href="#canvas.LEDStrip.RED_MASK" title="canvas.LEDStrip.RED_MASK"><code class="xref py py-attr docutils literal notranslate"><span class="pre">RED_MASK</span></code></a>, <a class="reference internal" href="#canvas.LEDStrip.GREEN_MASK" title="canvas.LEDStrip.GREEN_MASK"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GREEN_MASK</span></code></a>, and <a class="reference internal" href="#canvas.LEDStrip.BLUE_MASK" title="canvas.LEDStrip.BLUE_MASK"><code class="xref py py-attr docutils literal notranslate"><span class="pre">BLUE_MASK</span></code></a> can be
+used to extract the individual color components from the color value.</p>
+<p>The following colors are predefined for convenience:
+- <a class="reference internal" href="#canvas.LEDStrip.COLOR_RED" title="canvas.LEDStrip.COLOR_RED"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COLOR_RED</span></code></a>
+- <a class="reference internal" href="#canvas.LEDStrip.COLOR_GREEN" title="canvas.LEDStrip.COLOR_GREEN"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COLOR_GREEN</span></code></a>
+- <a class="reference internal" href="#canvas.LEDStrip.COLOR_BLUE" title="canvas.LEDStrip.COLOR_BLUE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COLOR_BLUE</span></code></a>
+- <a class="reference internal" href="#canvas.LEDStrip.COLOR_YELLOW" title="canvas.LEDStrip.COLOR_YELLOW"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COLOR_YELLOW</span></code></a>
+- <a class="reference internal" href="#canvas.LEDStrip.COLOR_MAGENTA" title="canvas.LEDStrip.COLOR_MAGENTA"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COLOR_MAGENTA</span></code></a>
+- <a class="reference internal" href="#canvas.LEDStrip.COLOR_CYAN" title="canvas.LEDStrip.COLOR_CYAN"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COLOR_CYAN</span></code></a>
+- <a class="reference internal" href="#canvas.LEDStrip.COLOR_WHITE" title="canvas.LEDStrip.COLOR_WHITE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COLOR_WHITE</span></code></a>
+- <a class="reference internal" href="#canvas.LEDStrip.COLOR_OFF" title="canvas.LEDStrip.COLOR_OFF"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COLOR_OFF</span></code></a></p>
+<p>Example to set the color of the first LED in the strip to red:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">canvas</span> <span class="kn">import</span> <span class="n">LEDStrip</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">strip</span> <span class="o">=</span> <span class="n">LEDStrip</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">strip</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">LEDStrip</span><span class="o">.</span><span class="n">COLOR_RED</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pin</strong> (<em>str</em>) – The pin to use for the LED strip</p></li>
+<li><p><strong>num_leds</strong> (<em>int</em>) – The number of LEDs in the strip</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas.LEDStrip.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas.LEDStrip.set" title="Link to this definition"></a></dt>
+<dd><p>Set the color of an LED in a strip</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – The index of the LED to set</p></li>
+<li><p><strong>color</strong> (<em>int</em>) – The color to set the LED to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.BLUE_MASK">
+<span class="sig-name descname"><span class="pre">BLUE_MASK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.BLUE_MASK" title="Link to this definition"></a></dt>
+<dd><p>Mask for the blue portion of a color value</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.COLOR_BLUE">
+<span class="sig-name descname"><span class="pre">COLOR_BLUE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.COLOR_BLUE" title="Link to this definition"></a></dt>
+<dd><p>Blue color value, full brightness</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.COLOR_CYAN">
+<span class="sig-name descname"><span class="pre">COLOR_CYAN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.COLOR_CYAN" title="Link to this definition"></a></dt>
+<dd><p>Cyan color value, full brightness</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.COLOR_GREEN">
+<span class="sig-name descname"><span class="pre">COLOR_GREEN</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.COLOR_GREEN" title="Link to this definition"></a></dt>
+<dd><p>Green color value, full brightness</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.COLOR_MAGENTA">
+<span class="sig-name descname"><span class="pre">COLOR_MAGENTA</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.COLOR_MAGENTA" title="Link to this definition"></a></dt>
+<dd><p>Magenta color value, full brightness</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.COLOR_OFF">
+<span class="sig-name descname"><span class="pre">COLOR_OFF</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.COLOR_OFF" title="Link to this definition"></a></dt>
+<dd><p>Off color value</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.COLOR_RED">
+<span class="sig-name descname"><span class="pre">COLOR_RED</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.COLOR_RED" title="Link to this definition"></a></dt>
+<dd><p>Red color value, full brightness</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.COLOR_WHITE">
+<span class="sig-name descname"><span class="pre">COLOR_WHITE</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.COLOR_WHITE" title="Link to this definition"></a></dt>
+<dd><p>White color value, full brightness</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.COLOR_YELLOW">
+<span class="sig-name descname"><span class="pre">COLOR_YELLOW</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.COLOR_YELLOW" title="Link to this definition"></a></dt>
+<dd><p>Yellow color value, full brightness</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.GREEN_MASK">
+<span class="sig-name descname"><span class="pre">GREEN_MASK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.GREEN_MASK" title="Link to this definition"></a></dt>
+<dd><p>Mask for the green portion of a color value</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="canvas.LEDStrip.RED_MASK">
+<span class="sig-name descname"><span class="pre">RED_MASK</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas.LEDStrip.RED_MASK" title="Link to this definition"></a></dt>
+<dd><p>Mask for the red portion of a color value</p>
+</dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="canvas.NFCTag">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">canvas.</span></span><span class="sig-name descname"><span class="pre">NFCTag</span></span><a class="headerlink" href="#canvas.NFCTag" title="Link to this definition"></a></dt>
