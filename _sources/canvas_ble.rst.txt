@@ -1,6 +1,6 @@
-***
-BLE
-***
+****************
+BLE (canvas_ble)
+****************
 
 The modules described in this chapter provide the interface to the
 Bluetooth Low Energy (BLE) stack in the radio module.

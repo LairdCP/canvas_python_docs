@@ -1,6 +1,6 @@
-***
-UWB
-***
+****************
+UWB (canvas_uwb)
+****************
 
 The modules described in this chapter provide the interface to the
 UWB stack in the radio module.

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UWB &mdash; Canvas  documentation</title>
+  <title>UWB (canvas_uwb) &mdash; Canvas  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Machine" href="machine.html" />
-    <link rel="prev" title="Canvas Networking" href="canvas_net.html" /> 
+    <link rel="next" title="Machine (machine)" href="machine.html" />
+    <link rel="prev" title="Canvas Networking (canvas_net)" href="canvas_net.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,10 +46,10 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="canvas.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">UWB</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="canvas.html">General (canvas)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE (canvas_ble)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking (canvas_net)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">UWB (canvas_uwb)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.UwbDeviceState"><code class="docutils literal notranslate"><span class="pre">UwbDeviceState</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbDeviceState.is_active"><code class="docutils literal notranslate"><span class="pre">UwbDeviceState.is_active()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbDeviceState.is_error"><code class="docutils literal notranslate"><span class="pre">UwbDeviceState.is_error()</span></code></a></li>
@@ -64,6 +64,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbSession.get_session_state"><code class="docutils literal notranslate"><span class="pre">UwbSession.get_session_state()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbSession.set_app_config"><code class="docutils literal notranslate"><span class="pre">UwbSession.set_app_config()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbSession.set_callback"><code class="docutils literal notranslate"><span class="pre">UwbSession.set_callback()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbSession.set_channel"><code class="docutils literal notranslate"><span class="pre">UwbSession.set_channel()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbSession.set_local_addr"><code class="docutils literal notranslate"><span class="pre">UwbSession.set_local_addr()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbSession.set_peer_addr"><code class="docutils literal notranslate"><span class="pre">UwbSession.set_peer_addr()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbSession.set_ranging_interval"><code class="docutils literal notranslate"><span class="pre">UwbSession.set_ranging_interval()</span></code></a></li>
@@ -87,10 +88,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#canvas_uwb.UwbStackCapabilities.is_responder_supported"><code class="docutils literal notranslate"><span class="pre">UwbStackCapabilities.is_responder_supported()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.get_device_info"><code class="docutils literal notranslate"><span class="pre">get_device_info()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.get_device_state"><code class="docutils literal notranslate"><span class="pre">get_device_state()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.get_stack_capability"><code class="docutils literal notranslate"><span class="pre">get_stack_capability()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.init"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.raw_uci_send"><code class="docutils literal notranslate"><span class="pre">raw_uci_send()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.session_from_profile"><code class="docutils literal notranslate"><span class="pre">session_from_profile()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.session_new"><code class="docutils literal notranslate"><span class="pre">session_new()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.shutdown"><code class="docutils literal notranslate"><span class="pre">shutdown()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.CONFIG_DEVICE_ROLE"><code class="docutils literal notranslate"><span class="pre">CONFIG_DEVICE_ROLE</span></code></a></li>
@@ -108,7 +111,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.CONFIG_SFD_ID"><code class="docutils literal notranslate"><span class="pre">CONFIG_SFD_ID</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.CONFIG_SLOTS_PER_RR"><code class="docutils literal notranslate"><span class="pre">CONFIG_SLOTS_PER_RR</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.CONFIG_SLOT_DURATION"><code class="docutils literal notranslate"><span class="pre">CONFIG_SLOT_DURATION</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.CONFIG_TX_POWER"><code class="docutils literal notranslate"><span class="pre">CONFIG_TX_POWER</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.MODE_MULTICAST"><code class="docutils literal notranslate"><span class="pre">MODE_MULTICAST</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.MODE_UNICAST"><code class="docutils literal notranslate"><span class="pre">MODE_UNICAST</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.RANGE_ERROR"><code class="docutils literal notranslate"><span class="pre">RANGE_ERROR</span></code></a></li>
@@ -116,7 +118,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#canvas_uwb.ROLE_RESPONDER"><code class="docutils literal notranslate"><span class="pre">ROLE_RESPONDER</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="machine.html">Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine.html">Machine (machine)</a></li>
 </ul>
 
         </div>
@@ -133,7 +135,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">UWB</li>
+      <li class="breadcrumb-item active">UWB (canvas_uwb)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/canvas_uwb.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -143,8 +145,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="uwb">
-<h1>UWB<a class="headerlink" href="#uwb" title="Link to this heading"></a></h1>
+  <section id="uwb-canvas-uwb">
+<h1>UWB (canvas_uwb)<a class="headerlink" href="#uwb-canvas-uwb" title="Link to this heading"></a></h1>
 <p>The modules described in this chapter provide the interface to the
 UWB stack in the radio module.</p>
 <dl class="py class" id="module-canvas_uwb">
@@ -304,6 +306,18 @@ values:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cb</strong> – The callback function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="canvas_uwb.UwbSession.set_channel">
+<span class="sig-name descname"><span class="pre">set_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#canvas_uwb.UwbSession.set_channel" title="Link to this definition"></a></dt>
+<dd><p>Set the channel of the session. This is the channel that the UWB
+stack will use when ranging with the peer(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>channel</strong> (<em>int</em>) – The channel. Only the values 5 and 9 are supported.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -493,6 +507,27 @@ added to a session.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="canvas_uwb.get_device_info">
+<span class="sig-prename descclassname"><span class="pre">canvas_uwb.</span></span><span class="sig-name descname"><span class="pre">get_device_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">any</span></span></span><a class="headerlink" href="#canvas_uwb.get_device_info" title="Link to this definition"></a></dt>
+<dd><p>Get UWB device information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A named tuple containing the following fields:
+- <cite>uci_version</cite>: The UCI spec version used by the UWB stack.
+- <cite>mac_version</cite>: The version of the MAC spec used by the UWB stack.
+- <cite>phy_version</cite>: The version of the PHY spec used by the UWB stack.
+- <cite>uci_test_version</cite>: The version of the UCI test spec used by the UWB stack.
+- <cite>device_name</cite>: The name of the UWB device.
+- <cite>firmware_version</cite>: The version of UWB firmware.
+- <cite>device_version</cite>: The version of the UWB device.
+- <cite>serial_number</cite>: The serial number of the UWB device.
+- <cite>dsp_version</cite>: The version of the DSP used by the UWB stack.
+- <cite>sr040_version</cite>: The version of the SR040 used by the UWB stack.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="canvas_uwb.get_device_state">
 <span class="sig-prename descclassname"><span class="pre">canvas_uwb.</span></span><span class="sig-name descname"><span class="pre">get_device_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#canvas_uwb.UwbDeviceState" title="canvas_uwb.UwbDeviceState"><span class="pre">UwbDeviceState</span></a></span></span><a class="headerlink" href="#canvas_uwb.get_device_state" title="Link to this definition"></a></dt>
 <dd><p>Get the state of the UWB device.</p>
@@ -538,6 +573,27 @@ UWB stack methods are called.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="canvas_uwb.session_from_profile">
+<span class="sig-prename descclassname"><span class="pre">canvas_uwb.</span></span><span class="sig-name descname"><span class="pre">session_from_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">role</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#canvas_uwb.UwbSession" title="canvas_uwb.UwbSession"><span class="pre">UwbSession</span></a></span></span><a class="headerlink" href="#canvas_uwb.session_from_profile" title="Link to this definition"></a></dt>
+<dd><p>Create a new session from a profile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>role</strong> – The role of the session. This should be either
+<a class="reference internal" href="#canvas_uwb.ROLE_RESPONDER" title="canvas_uwb.ROLE_RESPONDER"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_uwb.ROLE_RESPONDER</span></code></a> or
+<a class="reference internal" href="#canvas_uwb.ROLE_INITIATOR" title="canvas_uwb.ROLE_INITIATOR"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_uwb.ROLE_INITIATOR</span></code></a>.</p></li>
+<li><p><strong>local_addr</strong> – The local address to use for the session.</p></li>
+<li><p><strong>profile</strong> – The binary profile data to use for the session as received
+from the peer.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new session object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="canvas_uwb.session_new">
 <span class="sig-prename descclassname"><span class="pre">canvas_uwb.</span></span><span class="sig-name descname"><span class="pre">session_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#canvas_uwb.UwbSession" title="canvas_uwb.UwbSession"><span class="pre">UwbSession</span></a></span></span><a class="headerlink" href="#canvas_uwb.session_new" title="Link to this definition"></a></dt>
 <dd><p>Create a new session.</p>
@@ -550,6 +606,9 @@ session.</p></li>
 <a class="reference internal" href="#canvas_uwb.ROLE_RESPONDER" title="canvas_uwb.ROLE_RESPONDER"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_uwb.ROLE_RESPONDER</span></code></a> or
 <a class="reference internal" href="#canvas_uwb.ROLE_INITIATOR" title="canvas_uwb.ROLE_INITIATOR"><code class="xref py py-data docutils literal notranslate"><span class="pre">canvas_uwb.ROLE_INITIATOR</span></code></a>.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new session object.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -682,14 +741,6 @@ is no longer needed. To use the UWB stack again, the <cite>init()</cite> method.
 </dd></dl>
 
 <dl class="py data">
-<dt class="sig sig-object py" id="canvas_uwb.CONFIG_TX_POWER">
-<span class="sig-prename descclassname"><span class="pre">canvas_uwb.</span></span><span class="sig-name descname"><span class="pre">CONFIG_TX_POWER</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#canvas_uwb.CONFIG_TX_POWER" title="Link to this definition"></a></dt>
-<dd><dl class="field-list simple">
-</dl>
-<p>Application configuration for transmit power</p>
-</dd></dl>
-
-<dl class="py data">
 <dt class="sig sig-object py" id="canvas_uwb.MODE_MULTICAST">
 <span class="sig-prename descclassname"><span class="pre">canvas_uwb.</span></span><span class="sig-name descname"><span class="pre">MODE_MULTICAST</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bytes</span></em><a class="headerlink" href="#canvas_uwb.MODE_MULTICAST" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
@@ -735,8 +786,8 @@ is no longer needed. To use the UWB stack again, the <cite>init()</cite> method.
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="canvas_net.html" class="btn btn-neutral float-left" title="Canvas Networking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="machine.html" class="btn btn-neutral float-right" title="Machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="canvas_net.html" class="btn btn-neutral float-left" title="Canvas Networking (canvas_net)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="machine.html" class="btn btn-neutral float-right" title="Machine (machine)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

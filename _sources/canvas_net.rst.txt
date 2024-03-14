@@ -1,6 +1,6 @@
-*****************
-Canvas Networking
-*****************
+******************************
+Canvas Networking (canvas_net)
+******************************
 
 The modules described in this chapter provide the interface to the
 network stack in products with networking support (MG100, BL5340 DVK,

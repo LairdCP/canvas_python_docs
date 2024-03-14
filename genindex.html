@@ -43,11 +43,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="canvas.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="machine.html">Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas.html">General (canvas)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE (canvas_ble)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking (canvas_net)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB (canvas_uwb)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine.html">Machine (machine)</a></li>
 </ul>
 
         </div>
@@ -199,6 +199,8 @@
 </li>
       <li><a href="canvas.html#canvas.Timer.change_period">change_period() (canvas.Timer method)</a>
 </li>
+      <li><a href="canvas_ble.html#canvas_ble.Connection.change_security">change_security() (canvas_ble.Connection method)</a>
+</li>
       <li><a href="canvas.html#canvas.NFCTag.clear">clear() (canvas.NFCTag method)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.Advertiser.clear_buffer">clear_buffer() (canvas_ble.Advertiser method)</a>
@@ -221,10 +223,10 @@
 </li>
       <li><a href="canvas.html#canvas.LEDStrip.COLOR_RED">COLOR_RED (canvas.LEDStrip attribute)</a>
 </li>
-      <li><a href="canvas.html#canvas.LEDStrip.COLOR_WHITE">COLOR_WHITE (canvas.LEDStrip attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="canvas.html#canvas.LEDStrip.COLOR_WHITE">COLOR_WHITE (canvas.LEDStrip attribute)</a>
+</li>
       <li><a href="canvas.html#canvas.LEDStrip.COLOR_YELLOW">COLOR_YELLOW (canvas.LEDStrip attribute)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_DEVICE_ROLE">CONFIG_DEVICE_ROLE (in module canvas_uwb)</a>
@@ -257,8 +259,6 @@
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_SLOTS_PER_RR">CONFIG_SLOTS_PER_RR (in module canvas_uwb)</a>
 </li>
-      <li><a href="canvas_uwb.html#canvas_uwb.CONFIG_TX_POWER">CONFIG_TX_POWER (in module canvas_uwb)</a>
-</li>
       <li><a href="machine.html#machine.SPI.configure">configure() (machine.SPI method)</a>
 </li>
       <li><a href="machine.html#machine.Pin.configure_event">configure_event() (machine.Pin method)</a>
@@ -287,6 +287,8 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="canvas_ble.html#canvas_ble.Connection.delete_pairing">delete_pairing() (canvas_ble.Connection method)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.Connection.disconnect">disconnect() (canvas_ble.Connection method)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattClient.discover">discover() (canvas_ble.GattClient method)</a>
@@ -341,10 +343,10 @@
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_CCCD_INDICATE">EVENT_CCCD_INDICATE (canvas_ble.GattServer attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_CCCD_NONE">EVENT_CCCD_NONE (canvas_ble.GattServer attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_CCCD_NOTIFY">EVENT_CCCD_NOTIFY (canvas_ble.GattServer attribute)</a>
 </li>
       <li><a href="machine.html#machine.Pin.EVENT_FALLING">EVENT_FALLING (machine.Pin attribute)</a>
@@ -360,6 +362,10 @@
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_INDICATION_OK">EVENT_INDICATION_OK (canvas_ble.GattServer attribute)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattServer.EVENT_INDICATION_TIMEOUT">EVENT_INDICATION_TIMEOUT (canvas_ble.GattServer attribute)</a>
+</li>
+      <li><a href="machine.html#machine.Pin.EVENT_LEVEL_HIGH">EVENT_LEVEL_HIGH (machine.Pin attribute)</a>
+</li>
+      <li><a href="machine.html#machine.Pin.EVENT_LEVEL_LOW">EVENT_LEVEL_LOW (machine.Pin attribute)</a>
 </li>
       <li><a href="canvas_net.html#canvas_net.Modem.EVENT_NETWORK_STATE">EVENT_NETWORK_STATE (canvas_net.Modem attribute)</a>
 </li>
@@ -423,6 +429,8 @@
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattServer">GattServer (class in canvas_ble)</a>
 </li>
+      <li><a href="canvas_ble.html#canvas_ble.get_actual_tx_power">get_actual_tx_power() (in module canvas_ble)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.Connection.get_addr">get_addr() (canvas_ble.Connection method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.get_app_config">get_app_config() (canvas_uwb.UwbSession method)</a>
@@ -430,6 +438,8 @@
       <li><a href="canvas_net.html#canvas_net.Lwm2m.get_bytes">get_bytes() (canvas_net.Lwm2m method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbStackCapabilities.get_channel_mask">get_channel_mask() (canvas_uwb.UwbStackCapabilities method)</a>
+</li>
+      <li><a href="canvas_uwb.html#canvas_uwb.get_device_info">get_device_info() (in module canvas_uwb)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.get_device_state">get_device_state() (in module canvas_uwb)</a>
 </li>
@@ -451,6 +461,8 @@
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.UwbStackCapabilities.get_max_sessions">get_max_sessions() (canvas_uwb.UwbStackCapabilities method)</a>
 </li>
+      <li><a href="canvas_ble.html#canvas_ble.get_region">get_region() (in module canvas_ble)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.Connection.get_rssi">get_rssi() (canvas_ble.Connection method)</a>
 </li>
       <li><a href="canvas_net.html#canvas_net.Modem.get_serial_number">get_serial_number() (canvas_net.Modem method)</a>
@@ -458,6 +470,8 @@
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.get_session_state">get_session_state() (canvas_uwb.UwbSession method)</a>
 </li>
       <li><a href="canvas_uwb.html#canvas_uwb.get_stack_capability">get_stack_capability() (in module canvas_uwb)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.get_tx_power">get_tx_power() (in module canvas_ble)</a>
 </li>
       <li><a href="canvas.html#canvas.LEDStrip.GREEN_MASK">GREEN_MASK (canvas.LEDStrip attribute)</a>
 </li>
@@ -653,9 +667,27 @@
       </ul></li>
       <li><a href="machine.html#machine.Pin.reconfigure">reconfigure() (machine.Pin method)</a>
 </li>
+      <li><a href="canvas.html#canvas.LEDStrip.RED_MASK">RED_MASK (canvas.LEDStrip attribute)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.REGION_AUSTRALIA">REGION_AUSTRALIA (in module canvas_ble)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.REGION_CANADA">REGION_CANADA (in module canvas_ble)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.REGION_EU">REGION_EU (in module canvas_ble)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="canvas.html#canvas.LEDStrip.RED_MASK">RED_MASK (canvas.LEDStrip attribute)</a>
+      <li><a href="canvas_ble.html#canvas_ble.REGION_GLOBAL">REGION_GLOBAL (in module canvas_ble)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.REGION_JAPAN">REGION_JAPAN (in module canvas_ble)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.REGION_NEW_ZEALAND">REGION_NEW_ZEALAND (in module canvas_ble)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.REGION_SOUTH_KOREA">REGION_SOUTH_KOREA (in module canvas_ble)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.REGION_UK">REGION_UK (in module canvas_ble)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.REGION_USA">REGION_USA (in module canvas_ble)</a>
 </li>
       <li><a href="canvas_net.html#canvas_net.Modem.reset">reset() (canvas_net.Modem method)</a>
 </li>
@@ -685,6 +717,8 @@
 </li>
       <li><a href="canvas_net.html#canvas_net.Lwm2m.SECURITY_RAW_PK">SECURITY_RAW_PK (canvas_net.Lwm2m attribute)</a>
 </li>
+      <li><a href="canvas_uwb.html#canvas_uwb.session_from_profile">session_from_profile() (in module canvas_uwb)</a>
+</li>
       <li><a href="canvas_uwb.html#canvas_uwb.session_new">session_new() (in module canvas_uwb)</a>
 </li>
       <li><a href="canvas.html#canvas.LEDStrip.set">set() (canvas.LEDStrip method)</a>
@@ -704,6 +738,8 @@
       <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.set_callback">set_callback() (canvas_uwb.UwbSession method)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.GattClient.set_callbacks">set_callbacks() (canvas_ble.GattClient method)</a>
+</li>
+      <li><a href="canvas_uwb.html#canvas_uwb.UwbSession.set_channel">set_channel() (canvas_uwb.UwbSession method)</a>
 </li>
       <li><a href="canvas_ble.html#canvas_ble.Advertiser.set_channel_mask">set_channel_mask() (canvas_ble.Advertiser method)</a>
 </li>
@@ -735,7 +771,13 @@
 </li>
       <li><a href="canvas_net.html#canvas_net.Modem.set_rat">set_rat() (canvas_net.Modem method)</a>
 </li>
+      <li><a href="canvas_ble.html#canvas_ble.set_region">set_region() (in module canvas_ble)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.Connection.set_security_cb">set_security_cb() (canvas_ble.Connection method)</a>
+</li>
       <li><a href="canvas_ble.html#canvas_ble.Scanner.set_timing">set_timing() (canvas_ble.Scanner method)</a>
+</li>
+      <li><a href="canvas_ble.html#canvas_ble.set_tx_power">set_tx_power() (in module canvas_ble)</a>
 </li>
       <li><a href="canvas.html#canvas.NFCTag.set_write_callback">set_write_callback() (canvas.NFCTag method)</a>
 </li>

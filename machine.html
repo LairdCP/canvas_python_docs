@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Machine &mdash; Canvas  documentation</title>
+  <title>Machine (machine) &mdash; Canvas  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="UWB" href="canvas_uwb.html" /> 
+    <link rel="prev" title="UWB (canvas_uwb)" href="canvas_uwb.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,11 +45,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="canvas.html">General</a></li>
-<li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Machine</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="canvas.html">General (canvas)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_ble.html">BLE (canvas_ble)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_net.html">Canvas Networking (canvas_net)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="canvas_uwb.html">UWB (canvas_uwb)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Machine (machine)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#machine.I2C"><code class="docutils literal notranslate"><span class="pre">I2C</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#machine.I2C.read"><code class="docutils literal notranslate"><span class="pre">I2C.read()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.I2C.set_address"><code class="docutils literal notranslate"><span class="pre">I2C.set_address()</span></code></a></li>
@@ -69,6 +69,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.ANALOG"><code class="docutils literal notranslate"><span class="pre">Pin.ANALOG</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_BOTH"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_BOTH</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_FALLING"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_FALLING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_LEVEL_HIGH"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_LEVEL_HIGH</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_LEVEL_LOW"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_LEVEL_LOW</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_NONE"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_NONE</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.EVENT_RISING"><code class="docutils literal notranslate"><span class="pre">Pin.EVENT_RISING</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#machine.Pin.IN"><code class="docutils literal notranslate"><span class="pre">Pin.IN</span></code></a></li>
@@ -111,7 +113,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Machine</li>
+      <li class="breadcrumb-item active">Machine (machine)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/machine.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -121,8 +123,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="machine">
-<h1>Machine<a class="headerlink" href="#machine" title="Link to this heading"></a></h1>
+  <section id="machine-machine">
+<h1>Machine (machine)<a class="headerlink" href="#machine-machine" title="Link to this heading"></a></h1>
 <p>The modules described in this chapter provide the interface to the
 hardware interfaces in the machine module.</p>
 <dl class="py class" id="module-machine">
@@ -299,6 +301,22 @@ OUT, etc) and methods to get and set the digital logic level.</p>
 <dd><dl class="field-list simple">
 </dl>
 <p>Event on falling edge (1 -&gt; 0 transition)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.EVENT_LEVEL_HIGH">
+<span class="sig-name descname"><span class="pre">EVENT_LEVEL_HIGH</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.EVENT_LEVEL_HIGH" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Event on high level</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="machine.Pin.EVENT_LEVEL_LOW">
+<span class="sig-name descname"><span class="pre">EVENT_LEVEL_LOW</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#machine.Pin.EVENT_LEVEL_LOW" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+</dl>
+<p>Event on low level</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -494,7 +512,7 @@ configuration for hardware peripheral.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="canvas_uwb.html" class="btn btn-neutral float-left" title="UWB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="canvas_uwb.html" class="btn btn-neutral float-left" title="UWB (canvas_uwb)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
